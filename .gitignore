@@ -1,0 +1,26 @@
+#########################
+# update 4 June 2014
+# ignore Pods folder and Podfile.lock
+#########################
+
+Pods
+Podfile.lock
+.DS_Store
+.Trashes
+*.lock
+*~.nib
+DerivedData/
+build/
+
+*.pbxuser
+*.mode1v3
+*.mode2v3
+*.perspectivev3
+!default.pbxuser
+!default.mode1v3
+!default.mode2v3
+!default.perspectivev3
+project.xcworkspace/xcuserdata/
+UserInterfaceState.xcuserstate
+xcdebugger/
+*.moved-aside

@@ -1,0 +1,393 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 55;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		A93A251328ACFF73008D5673 /* QuranSearchApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A93A251228ACFF73008D5673 /* QuranSearchApp.swift */; };
+		A93A251528ACFF73008D5673 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A93A251428ACFF73008D5673 /* ContentView.swift */; };
+		A93A251728ACFF76008D5673 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A93A251628ACFF76008D5673 /* Assets.xcassets */; };
+		A93A251A28ACFF76008D5673 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A93A251928ACFF76008D5673 /* Preview Assets.xcassets */; };
+		A992BD1E28BB78FD00BE71D5 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = A992BD1D28BB78FD00BE71D5 /* Model.swift */; };
+		A992BD2028BB864D00BE71D5 /* NestedDecodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A992BD1F28BB864D00BE71D5 /* NestedDecodable.swift */; };
+		A9A1D2AB28BA626B00171A23 /* quran_en.json in Resources */ = {isa = PBXBuildFile; fileRef = A9A1D2AA28BA626B00171A23 /* quran_en.json */; };
+		A9A1D2AE28BB561F00171A23 /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = A9A1D2AD28BB561F00171A23 /* Realm */; };
+		A9A1D2B028BB561F00171A23 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = A9A1D2AF28BB561F00171A23 /* RealmSwift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		A93A250F28ACFF73008D5673 /* QuranTranslation.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QuranTranslation.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		A93A251228ACFF73008D5673 /* QuranSearchApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuranSearchApp.swift; sourceTree = "<group>"; };
+		A93A251428ACFF73008D5673 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		A93A251628ACFF76008D5673 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		A93A251928ACFF76008D5673 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		A992BD1D28BB78FD00BE71D5 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
+		A992BD1F28BB864D00BE71D5 /* NestedDecodable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NestedDecodable.swift; sourceTree = "<group>"; };
+		A9A1D2AA28BA626B00171A23 /* quran_en.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = quran_en.json; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		A93A250C28ACFF73008D5673 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A9A1D2B028BB561F00171A23 /* RealmSwift in Frameworks */,
+				A9A1D2AE28BB561F00171A23 /* Realm in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		A93A250628ACFF73008D5673 = {
+			isa = PBXGroup;
+			children = (
+				A93A251128ACFF73008D5673 /* QuranTranslation */,
+				A93A251028ACFF73008D5673 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		A93A251028ACFF73008D5673 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				A93A250F28ACFF73008D5673 /* QuranTranslation.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		A93A251128ACFF73008D5673 /* QuranTranslation */ = {
+			isa = PBXGroup;
+			children = (
+				A93A251228ACFF73008D5673 /* QuranSearchApp.swift */,
+				A93A251428ACFF73008D5673 /* ContentView.swift */,
+				A93A251628ACFF76008D5673 /* Assets.xcassets */,
+				A9A1D2AA28BA626B00171A23 /* quran_en.json */,
+				A93A251828ACFF76008D5673 /* Preview Content */,
+				A992BD1D28BB78FD00BE71D5 /* Model.swift */,
+				A992BD1F28BB864D00BE71D5 /* NestedDecodable.swift */,
+			);
+			path = QuranTranslation;
+			sourceTree = "<group>";
+		};
+		A93A251828ACFF76008D5673 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				A93A251928ACFF76008D5673 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		A93A250E28ACFF73008D5673 /* QuranTranslation */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A93A251D28ACFF76008D5673 /* Build configuration list for PBXNativeTarget "QuranTranslation" */;
+			buildPhases = (
+				A93A250B28ACFF73008D5673 /* Sources */,
+				A93A250C28ACFF73008D5673 /* Frameworks */,
+				A93A250D28ACFF73008D5673 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = QuranTranslation;
+			packageProductDependencies = (
+				A9A1D2AD28BB561F00171A23 /* Realm */,
+				A9A1D2AF28BB561F00171A23 /* RealmSwift */,
+			);
+			productName = QuranTranslation;
+			productReference = A93A250F28ACFF73008D5673 /* QuranTranslation.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		A93A250728ACFF73008D5673 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1320;
+				LastUpgradeCheck = 1320;
+				TargetAttributes = {
+					A93A250E28ACFF73008D5673 = {
+						CreatedOnToolsVersion = 13.2.1;
+					};
+				};
+			};
+			buildConfigurationList = A93A250A28ACFF73008D5673 /* Build configuration list for PBXProject "QuranTranslation" */;
+			compatibilityVersion = "Xcode 13.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = A93A250628ACFF73008D5673;
+			packageReferences = (
+				A9A1D2AC28BB561F00171A23 /* XCRemoteSwiftPackageReference "realm-swift" */,
+			);
+			productRefGroup = A93A251028ACFF73008D5673 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				A93A250E28ACFF73008D5673 /* QuranTranslation */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		A93A250D28ACFF73008D5673 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A93A251A28ACFF76008D5673 /* Preview Assets.xcassets in Resources */,
+				A93A251728ACFF76008D5673 /* Assets.xcassets in Resources */,
+				A9A1D2AB28BA626B00171A23 /* quran_en.json in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		A93A250B28ACFF73008D5673 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A992BD1E28BB78FD00BE71D5 /* Model.swift in Sources */,
+				A93A251528ACFF73008D5673 /* ContentView.swift in Sources */,
+				A992BD2028BB864D00BE71D5 /* NestedDecodable.swift in Sources */,
+				A93A251328ACFF73008D5673 /* QuranSearchApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		A93A251B28ACFF76008D5673 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		A93A251C28ACFF76008D5673 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		A93A251E28ACFF76008D5673 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"QuranTranslation/Preview Content\"";
+				DEVELOPMENT_TEAM = C39XVMFQ52;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = sina.QuranTranslation;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		A93A251F28ACFF76008D5673 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"QuranTranslation/Preview Content\"";
+				DEVELOPMENT_TEAM = C39XVMFQ52;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = sina.QuranTranslation;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		A93A250A28ACFF73008D5673 /* Build configuration list for PBXProject "QuranTranslation" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A93A251B28ACFF76008D5673 /* Debug */,
+				A93A251C28ACFF76008D5673 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A93A251D28ACFF76008D5673 /* Build configuration list for PBXNativeTarget "QuranTranslation" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A93A251E28ACFF76008D5673 /* Debug */,
+				A93A251F28ACFF76008D5673 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		A9A1D2AC28BB561F00171A23 /* XCRemoteSwiftPackageReference "realm-swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/realm/realm-swift.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 10.28.6;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		A9A1D2AD28BB561F00171A23 /* Realm */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A9A1D2AC28BB561F00171A23 /* XCRemoteSwiftPackageReference "realm-swift" */;
+			productName = Realm;
+		};
+		A9A1D2AF28BB561F00171A23 /* RealmSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A9A1D2AC28BB561F00171A23 /* XCRemoteSwiftPackageReference "realm-swift" */;
+			productName = RealmSwift;
+		};
+/* End XCSwiftPackageProductDependency section */
+	};
+	rootObject = A93A250728ACFF73008D5673 /* Project object */;
+}
