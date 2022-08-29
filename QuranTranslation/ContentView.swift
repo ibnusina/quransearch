@@ -8,14 +8,25 @@
 import SwiftUI
 
 struct ContentView: View {
+    @State var searchQuery = ""
+    @State var language = "Bahasa: 🇮🇩"
+
     var body: some View {
-        Text("Hello, world!")
-            .padding()
+        NavigationView {
+            ScrollView {
+                VStack(alignment: .leading) {}.navigationBarTitle("Activities")
+            }
+            .navigationBarItems(
+                trailing: Button(action: {}) {
+                    Text(language)
+                })
+            .searchable(text: $searchQuery)
+        }
+        
     }
 }
 
 struct ContentView_Previews: PreviewProvider {
-    
     static var previews: some View {
         ContentView()
     }
