@@ -11,6 +11,7 @@
 		A93A251528ACFF73008D5673 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A93A251428ACFF73008D5673 /* ContentView.swift */; };
 		A93A251728ACFF76008D5673 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A93A251628ACFF76008D5673 /* Assets.xcassets */; };
 		A93A251A28ACFF76008D5673 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A93A251928ACFF76008D5673 /* Preview Assets.xcassets */; };
+		A965173E28C4B2C800FB660B /* VerseCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A965173D28C4B2C800FB660B /* VerseCellView.swift */; };
 		A992BD1E28BB78FD00BE71D5 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = A992BD1D28BB78FD00BE71D5 /* Model.swift */; };
 		A992BD2028BB864D00BE71D5 /* NestedDecodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A992BD1F28BB864D00BE71D5 /* NestedDecodable.swift */; };
 		A9A1D2AB28BA626B00171A23 /* quran_en.json in Resources */ = {isa = PBXBuildFile; fileRef = A9A1D2AA28BA626B00171A23 /* quran_en.json */; };
@@ -24,6 +25,7 @@
 		A93A251428ACFF73008D5673 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		A93A251628ACFF76008D5673 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A93A251928ACFF76008D5673 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		A965173D28C4B2C800FB660B /* VerseCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerseCellView.swift; sourceTree = "<group>"; };
 		A992BD1D28BB78FD00BE71D5 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		A992BD1F28BB864D00BE71D5 /* NestedDecodable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NestedDecodable.swift; sourceTree = "<group>"; };
 		A9A1D2AA28BA626B00171A23 /* quran_en.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = quran_en.json; sourceTree = "<group>"; };
@@ -61,8 +63,8 @@
 		A93A251128ACFF73008D5673 /* QuranTranslation */ = {
 			isa = PBXGroup;
 			children = (
+				A965173C28C4B22700FB660B /* SearchPage */,
 				A93A251228ACFF73008D5673 /* QuranSearchApp.swift */,
-				A93A251428ACFF73008D5673 /* ContentView.swift */,
 				A93A251628ACFF76008D5673 /* Assets.xcassets */,
 				A9A1D2AA28BA626B00171A23 /* quran_en.json */,
 				A93A251828ACFF76008D5673 /* Preview Content */,
@@ -78,6 +80,15 @@
 				A93A251928ACFF76008D5673 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		A965173C28C4B22700FB660B /* SearchPage */ = {
+			isa = PBXGroup;
+			children = (
+				A93A251428ACFF73008D5673 /* ContentView.swift */,
+				A965173D28C4B2C800FB660B /* VerseCellView.swift */,
+			);
+			path = SearchPage;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -160,6 +171,7 @@
 			files = (
 				A992BD1E28BB78FD00BE71D5 /* Model.swift in Sources */,
 				A93A251528ACFF73008D5673 /* ContentView.swift in Sources */,
+				A965173E28C4B2C800FB660B /* VerseCellView.swift in Sources */,
 				A992BD2028BB864D00BE71D5 /* NestedDecodable.swift in Sources */,
 				A93A251328ACFF73008D5673 /* QuranSearchApp.swift in Sources */,
 			);

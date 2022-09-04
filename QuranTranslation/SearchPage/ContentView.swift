@@ -16,9 +16,10 @@ struct ContentView: View {
     var body: some View {
         NavigationView {
             List(verses) { verse in
-                Text(verse.verse)
+                VerseCellView(verse: verse)
             }
-            .navigationBarTitle("Activities")
+            .listStyle(PlainListStyle())
+            .navigationBarTitle("Quran Search")
             .navigationBarItems(
                 trailing: Button(action: {}) {
                     Text(language)
@@ -57,18 +58,6 @@ struct ContentView: View {
     }
 }
 
-struct SearchResult: Identifiable {
-    var id: String {
-        "\(chapterNumber)-\(verseNumber)"
-    }
-    
-    let verse: String
-    let verseNumber: Int
-    let chapterName: String
-    let chapterNumber: Int
-    let chapterArabic: String
-    let chapterTranslation: String
-}
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
