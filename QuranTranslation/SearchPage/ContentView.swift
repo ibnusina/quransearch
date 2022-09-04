@@ -16,7 +16,7 @@ struct ContentView: View {
     var body: some View {
         NavigationView {
             List(verses) { verse in
-                VerseCellView(verse: verse)
+                VerseCellView(keyword:searchQuery, verse: verse)
             }
             .listStyle(PlainListStyle())
             .navigationBarTitle("Quran Search")
