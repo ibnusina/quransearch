@@ -15,11 +15,11 @@
 		A992BD1E28BB78FD00BE71D5 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = A992BD1D28BB78FD00BE71D5 /* Model.swift */; };
 		A992BD2028BB864D00BE71D5 /* NestedDecodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A992BD1F28BB864D00BE71D5 /* NestedDecodable.swift */; };
 		A9A1D2AB28BA626B00171A23 /* quran_en.json in Resources */ = {isa = PBXBuildFile; fileRef = A9A1D2AA28BA626B00171A23 /* quran_en.json */; };
-		A9A1D2AE28BB561F00171A23 /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = A9A1D2AD28BB561F00171A23 /* Realm */; };
-		A9A1D2B028BB561F00171A23 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = A9A1D2AF28BB561F00171A23 /* RealmSwift */; };
+		E4F69D8FDE33152A0B01B3DA /* Pods_QuranTranslation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F94C82C18A226A93C27533B /* Pods_QuranTranslation.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2F94C82C18A226A93C27533B /* Pods_QuranTranslation.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_QuranTranslation.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A93A250F28ACFF73008D5673 /* QuranTranslation.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QuranTranslation.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A93A251228ACFF73008D5673 /* QuranSearchApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuranSearchApp.swift; sourceTree = "<group>"; };
 		A93A251428ACFF73008D5673 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -29,6 +29,8 @@
 		A992BD1D28BB78FD00BE71D5 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		A992BD1F28BB864D00BE71D5 /* NestedDecodable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NestedDecodable.swift; sourceTree = "<group>"; };
 		A9A1D2AA28BA626B00171A23 /* quran_en.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = quran_en.json; sourceTree = "<group>"; };
+		ABBE2A50F88A49638B4AFA85 /* Pods-QuranTranslation.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QuranTranslation.release.xcconfig"; path = "Target Support Files/Pods-QuranTranslation/Pods-QuranTranslation.release.xcconfig"; sourceTree = "<group>"; };
+		EB5DC956FAF46C34917885A5 /* Pods-QuranTranslation.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QuranTranslation.debug.xcconfig"; path = "Target Support Files/Pods-QuranTranslation/Pods-QuranTranslation.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -36,8 +38,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A9A1D2B028BB561F00171A23 /* RealmSwift in Frameworks */,
-				A9A1D2AE28BB561F00171A23 /* Realm in Frameworks */,
+				E4F69D8FDE33152A0B01B3DA /* Pods_QuranTranslation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -49,6 +50,8 @@
 			children = (
 				A93A251128ACFF73008D5673 /* QuranTranslation */,
 				A93A251028ACFF73008D5673 /* Products */,
+				D12E0AB7BBCACE7BEE34F21B /* Pods */,
+				B28047A52A119861291D47E8 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -91,6 +94,24 @@
 			path = SearchPage;
 			sourceTree = "<group>";
 		};
+		B28047A52A119861291D47E8 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				2F94C82C18A226A93C27533B /* Pods_QuranTranslation.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		D12E0AB7BBCACE7BEE34F21B /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				EB5DC956FAF46C34917885A5 /* Pods-QuranTranslation.debug.xcconfig */,
+				ABBE2A50F88A49638B4AFA85 /* Pods-QuranTranslation.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -98,19 +119,17 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = A93A251D28ACFF76008D5673 /* Build configuration list for PBXNativeTarget "QuranTranslation" */;
 			buildPhases = (
+				25832890035F2C28FFD19EAE /* [CP] Check Pods Manifest.lock */,
 				A93A250B28ACFF73008D5673 /* Sources */,
 				A93A250C28ACFF73008D5673 /* Frameworks */,
 				A93A250D28ACFF73008D5673 /* Resources */,
+				50C65B572000E73CAF01B286 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			name = QuranTranslation;
-			packageProductDependencies = (
-				A9A1D2AD28BB561F00171A23 /* Realm */,
-				A9A1D2AF28BB561F00171A23 /* RealmSwift */,
-			);
 			productName = QuranTranslation;
 			productReference = A93A250F28ACFF73008D5673 /* QuranTranslation.app */;
 			productType = "com.apple.product-type.application";
@@ -139,9 +158,6 @@
 				Base,
 			);
 			mainGroup = A93A250628ACFF73008D5673;
-			packageReferences = (
-				A9A1D2AC28BB561F00171A23 /* XCRemoteSwiftPackageReference "realm-swift" */,
-			);
 			productRefGroup = A93A251028ACFF73008D5673 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -163,6 +179,48 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		25832890035F2C28FFD19EAE /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-QuranTranslation-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		50C65B572000E73CAF01B286 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-QuranTranslation/Pods-QuranTranslation-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-QuranTranslation/Pods-QuranTranslation-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-QuranTranslation/Pods-QuranTranslation-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		A93A250B28ACFF73008D5673 /* Sources */ = {
@@ -298,6 +356,7 @@
 		};
 		A93A251E28ACFF76008D5673 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = EB5DC956FAF46C34917885A5 /* Pods-QuranTranslation.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -327,6 +386,7 @@
 		};
 		A93A251F28ACFF76008D5673 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = ABBE2A50F88A49638B4AFA85 /* Pods-QuranTranslation.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -376,30 +436,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCRemoteSwiftPackageReference section */
-		A9A1D2AC28BB561F00171A23 /* XCRemoteSwiftPackageReference "realm-swift" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/realm/realm-swift.git";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 10.28.6;
-			};
-		};
-/* End XCRemoteSwiftPackageReference section */
-
-/* Begin XCSwiftPackageProductDependency section */
-		A9A1D2AD28BB561F00171A23 /* Realm */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = A9A1D2AC28BB561F00171A23 /* XCRemoteSwiftPackageReference "realm-swift" */;
-			productName = Realm;
-		};
-		A9A1D2AF28BB561F00171A23 /* RealmSwift */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = A9A1D2AC28BB561F00171A23 /* XCRemoteSwiftPackageReference "realm-swift" */;
-			productName = RealmSwift;
-		};
-/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = A93A250728ACFF73008D5673 /* Project object */;
 }
