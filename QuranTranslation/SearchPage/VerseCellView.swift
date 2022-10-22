@@ -25,9 +25,6 @@ struct VerseCellView: View {
                 
             }
             Spacer(minLength: 0)
-            NavigationLink(destination: Text("Somewhere")) {
-                EmptyView()
-            }.frame(width: 20, height: 40, alignment: .center)
         }.padding(EdgeInsets(top: 12, leading: 0, bottom: 12, trailing: 0))
         
     }
@@ -51,6 +48,22 @@ struct SearchResult: Identifiable {
     let chapterNumber: Int
     let chapterArabic: String
     let chapterTranslation: String
+    
+    init(
+        verse: String = "",
+        verseNumber: Int = 0,
+        chapterName: String = "",
+        chapterNumber: Int = 0,
+        chapterArabic: String = "",
+        chapterTranslation: String = ""
+    ) {
+        self.verse = verse
+        self.verseNumber = verseNumber
+        self.chapterName = chapterName
+        self.chapterNumber = chapterNumber
+        self.chapterArabic = chapterArabic
+        self.chapterTranslation = chapterTranslation
+    }
 }
 
 

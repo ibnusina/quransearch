@@ -15,6 +15,7 @@
 		A992BD1E28BB78FD00BE71D5 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = A992BD1D28BB78FD00BE71D5 /* Model.swift */; };
 		A992BD2028BB864D00BE71D5 /* NestedDecodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A992BD1F28BB864D00BE71D5 /* NestedDecodable.swift */; };
 		A9A1D2AB28BA626B00171A23 /* quran_en.json in Resources */ = {isa = PBXBuildFile; fileRef = A9A1D2AA28BA626B00171A23 /* quran_en.json */; };
+		A9F6381D28FDB7E100B1BBAC /* VerseDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9F6381C28FDB7E100B1BBAC /* VerseDetailView.swift */; };
 		E4F69D8FDE33152A0B01B3DA /* Pods_QuranTranslation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F94C82C18A226A93C27533B /* Pods_QuranTranslation.framework */; };
 /* End PBXBuildFile section */
 
@@ -29,6 +30,7 @@
 		A992BD1D28BB78FD00BE71D5 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		A992BD1F28BB864D00BE71D5 /* NestedDecodable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NestedDecodable.swift; sourceTree = "<group>"; };
 		A9A1D2AA28BA626B00171A23 /* quran_en.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = quran_en.json; sourceTree = "<group>"; };
+		A9F6381C28FDB7E100B1BBAC /* VerseDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerseDetailView.swift; sourceTree = "<group>"; };
 		ABBE2A50F88A49638B4AFA85 /* Pods-QuranTranslation.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QuranTranslation.release.xcconfig"; path = "Target Support Files/Pods-QuranTranslation/Pods-QuranTranslation.release.xcconfig"; sourceTree = "<group>"; };
 		EB5DC956FAF46C34917885A5 /* Pods-QuranTranslation.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QuranTranslation.debug.xcconfig"; path = "Target Support Files/Pods-QuranTranslation/Pods-QuranTranslation.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -66,6 +68,7 @@
 		A93A251128ACFF73008D5673 /* QuranTranslation */ = {
 			isa = PBXGroup;
 			children = (
+				A9F6381B28FDB79C00B1BBAC /* VerseDetail */,
 				A965173C28C4B22700FB660B /* SearchPage */,
 				A93A251228ACFF73008D5673 /* QuranSearchApp.swift */,
 				A93A251628ACFF76008D5673 /* Assets.xcassets */,
@@ -94,6 +97,14 @@
 			path = SearchPage;
 			sourceTree = "<group>";
 		};
+		A9F6381B28FDB79C00B1BBAC /* VerseDetail */ = {
+			isa = PBXGroup;
+			children = (
+				A9F6381C28FDB7E100B1BBAC /* VerseDetailView.swift */,
+			);
+			path = VerseDetail;
+			sourceTree = "<group>";
+		};
 		B28047A52A119861291D47E8 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -108,7 +119,6 @@
 				EB5DC956FAF46C34917885A5 /* Pods-QuranTranslation.debug.xcconfig */,
 				ABBE2A50F88A49638B4AFA85 /* Pods-QuranTranslation.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -227,6 +237,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A9F6381D28FDB7E100B1BBAC /* VerseDetailView.swift in Sources */,
 				A992BD1E28BB78FD00BE71D5 /* Model.swift in Sources */,
 				A93A251528ACFF73008D5673 /* ContentView.swift in Sources */,
 				A965173E28C4B2C800FB660B /* VerseCellView.swift in Sources */,

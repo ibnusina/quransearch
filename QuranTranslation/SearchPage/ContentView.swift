@@ -12,21 +12,35 @@ struct ContentView: View {
     @State var searchQuery = ""
     @State var language = "Bahasa: 🇮🇩"
     @State var verses: [SearchResult] = []
+    @State var selectedVerse: SearchResult = SearchResult()
+    @State var tapped: Bool = false
     
     var body: some View {
         NavigationView {
-            List(verses) { verse in
-                VerseCellView(keyword:searchQuery, verse: verse)
+            VStack {
+                List(verses) { verse in
+                    VerseCellView(keyword:searchQuery, verse: verse).onTapGesture {
+                        selectedVerse = verse
+                        tapped = true
+                    }
+                }
+                .listStyle(PlainListStyle())
+                .navigationBarTitle("Quran Search")
+                .navigationBarItems(
+                    trailing: Button(action: {}) {
+                        Text(language)
+                    })
+                .searchable(text: $searchQuery).onChange(of: searchQuery) { newValue in
+                    verses = searchVerse(newValue, page: 1, pageSize: 10)
+                }
+                NavigationLink("abc", isActive: $tapped) {
+                    VerseDetailView(verseId: selectedVerse.verseNumber, chapterId: selectedVerse.chapterNumber)
+                }.hidden().frame(width: 0, height: 0, alignment: .bottomLeading)
             }
-            .listStyle(PlainListStyle())
-            .navigationBarTitle("Quran Search")
-            .navigationBarItems(
-                trailing: Button(action: {}) {
-                    Text(language)
-                })
-            .searchable(text: $searchQuery).onChange(of: searchQuery) { newValue in
-                verses = searchVerse(newValue, page: 1, pageSize: 10)
-            }
+            
+//            .sheet(isPresented: $tapped, onDismiss: {tapped = false}) {
+//                VerseDetailView(verseId: selectedVerse.verseNumber, chapterId: selectedVerse.chapterNumber)
+//            }
             
             
         }
