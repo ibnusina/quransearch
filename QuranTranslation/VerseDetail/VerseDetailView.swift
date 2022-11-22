@@ -7,28 +7,64 @@
 
 import SwiftUI
 
-struct VerseDetailView: View {
+internal struct VerseDetailView: View {
     @State var verseDetail: VerseDetail
     
-    init(verseId: Int, chapterId: Int) {
+    internal init(verseId: Int, chapterId: Int) {
         if let chapter = localRealm.objects(Chapter.self).first(where: { chapter in chapter.chapterId == chapterId }),
            let verse = chapter.verses.first(where: { verse in verse.verseId == verseId }) {
-            verseDetail = VerseDetail(chapterNumber: chapter.chapterId, verseNumber: verse.verseId)
+            verseDetail = VerseDetail(
+                chapterNumber: chapter.chapterId,
+                chapterName: chapter.translation,
+                chapterArabic: chapter.name,
+                chapterTranslation: chapter.translation,
+                verseNumber: verse.verseId,
+                verseArabic: verse.text,
+                verseTranslation: verse.translation
+            )
         } else {
-            verseDetail = VerseDetail(chapterNumber: 3, verseNumber: 3)
+            verseDetail = VerseDetail()
         }
     }
     
     var body: some View {
-        
-        Text("\(verseDetail.chapterNumber) - \(verseDetail.verseNumber)")
-        
+        NavigationView {
+            VStack(spacing: 8) {
+                Text(verseDetail.verseTranslation).frame(maxWidth: .infinity, alignment: .leading)
+                Text(verseDetail.verseArabic).frame(maxWidth: .infinity, alignment: .trailing)
+                Spacer()
+            }
+        }.navigationTitle("Chapter \(verseDetail.chapterNumber): \(verseDetail.chapterName)")
+            .navigationBarTitleDisplayMode(.inline)
     }
 }
 
-struct VerseDetail {
-    let chapterNumber: Int
-    let verseNumber: Int
+internal struct VerseDetail {
+    internal let chapterNumber: Int
+    internal let chapterName: String
+    internal let chapterArabic: String
+    internal let chapterTranslation: String
+    internal let verseNumber: Int
+    internal let verseArabic: String
+    internal let verseTranslation: String
+    
+    init(
+        chapterNumber: Int = 0,
+        chapterName: String = "",
+        chapterArabic: String = "",
+        chapterTranslation: String = "",
+        verseNumber: Int = 0,
+        verseArabic: String = "",
+        verseTranslation: String = ""
+    ) {
+        self.chapterNumber = chapterNumber
+        self.chapterName = chapterName
+        self.chapterArabic = chapterArabic
+        self.chapterTranslation = chapterTranslation
+        self.verseNumber = verseNumber
+        self.verseArabic = verseArabic
+        self.verseTranslation = verseTranslation
+    }
 }
 
 struct AyahDetailView_Previews: PreviewProvider {
