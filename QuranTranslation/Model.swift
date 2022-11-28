@@ -5,19 +5,20 @@
 //  Created by ibnu.sina on 28/08/22.
 //
 
+import Realm
 import RealmSwift
 import Foundation
 
 public class Chapter: Object, Decodable {
-    @Persisted(primaryKey: true) var _id: ObjectId
-    @Persisted var chapterId: Int = 0
-    @Persisted var name: String = ""
-    @Persisted var transliteration: String = ""
-    @Persisted var translation: String = ""
-    @Persisted var type: String = ""
-    @Persisted var totalVerses: Int = 0
-    @Persisted var verses: List<Verse>
-    
+    @objc dynamic var _id: ObjectId = ObjectId.generate()
+    @objc dynamic var chapterId: Int = 0
+    @objc dynamic var name: String = ""
+    @objc dynamic var transliteration: String = ""
+    @objc dynamic var translation: String = ""
+    @objc dynamic var type: String = ""
+    @objc dynamic var totalVerses: Int = 0
+    var verses: List<Verse> = List<Verse>()
+
     public enum CodingKeys: String, CodingKey {
         case chapterId = "id"
         case name
@@ -27,7 +28,7 @@ public class Chapter: Object, Decodable {
         case totalVerses = "total_verses"
         case verses
     }
-    
+
     public required convenience init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         self.init()
@@ -38,28 +39,35 @@ public class Chapter: Object, Decodable {
         type = try container.decode(String.self, forKey: .type)
         totalVerses = try container.decode(Int.self, forKey: .totalVerses)
         verses = try container.decode(List<Verse>.self, forKey: .verses)
-        
+    }
+    
+    override public class func primaryKey() -> String? {
+        return "_id"
     }
 }
 
 public class Verse: Object, Decodable {
-    @Persisted(primaryKey: true) var _id: ObjectId
-    @Persisted var verseId: Int = 0
-    @Persisted var text: String = ""
-    @Persisted var translation: String
-    
+    @objc dynamic var _id: ObjectId = ObjectId.generate()
+    @objc dynamic var verseId: Int = 0
+    @objc dynamic var text: String = ""
+    @objc dynamic var translation: String = ""
+
     internal enum CodingKeys: String, CodingKey {
         case verseId = "id"
         case text
         case translation
     }
-    
+
     public required convenience init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         self.init()
         verseId = try container.decode(Int.self, forKey: .verseId)
         text = try container.decode(String.self, forKey: .text)
         translation = try container.decode(String.self, forKey: .translation)
+    }
+    
+    override public class func primaryKey() -> String? {
+        return "_id"
     }
 }
 

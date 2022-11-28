@@ -31,30 +31,27 @@ struct ContentView: View {
                         Text(language)
                     })
                 .searchable(text: $searchQuery).onChange(of: searchQuery) { newValue in
-                    verses = searchVerse(newValue, page: 1, pageSize: 10)
+                    verses = searchVerse(newValue, page: 0, pageSize: 10)
                 }
-                NavigationLink("abc", isActive: $tapped) {
+                NavigationLink("", isActive: $tapped) {
                     VerseDetailView(verseId: selectedVerse.verseNumber, chapterId: selectedVerse.chapterNumber)
                 }.hidden().frame(width: 0, height: 0, alignment: .bottomLeading)
             }
-            
-//            .sheet(isPresented: $tapped, onDismiss: {tapped = false}) {
-//                VerseDetailView(verseId: selectedVerse.verseNumber, chapterId: selectedVerse.chapterNumber)
-//            }
-            
-            
         }
     }
     
     func searchVerse(_ keyword: String, page: Int, pageSize: Int) -> [SearchResult] {
         var result: [SearchResult] = []
         let verses = localRealm.objects(Verse.self).filter("translation contains[c] %@", keyword)
+        print(verses    )
         
-        for i in 0..<pageSize {
-            let index = i*page
+        for i in (page * pageSize)..<pageSize * (page + 1) {
+            print("masup \(i)")
+            let index = i
             guard index < verses.count else { break }
             let verse = verses[index]
-            if let chapter = localRealm.objects(Chapter.self).where({ $0.verses.contains(verse) }).first {
+            print("masup lagi: \(verse)")
+            if let chapter = localRealm.objects(Chapter.self).first(where: { chapter in chapter.verses.contains(verse) }) {
                 result.append(
                     SearchResult(
                         verse: verse.translation,
