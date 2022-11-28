@@ -8,7 +8,7 @@
 import SwiftUI
 import RealmSwift
 
-struct ContentView: View {
+struct VerseListView: View {
     @State var searchQuery = ""
     @State var language = "Bahasa: 🇮🇩"
     @State var verses: [SearchResult] = []
@@ -72,6 +72,6 @@ struct ContentView: View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        VerseListView()
     }
 }

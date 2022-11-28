@@ -26,7 +26,7 @@ struct QuranSearchApp: SwiftUI.App {
     
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            VerseListView()
         }
     }
 }
