@@ -58,7 +58,7 @@ internal struct VerseDetailView: View {
 
             if verseId == lastVerseId && chapterId != lastChapterId {
                 nextTitle = "to chapter \(chapterId + 1)"
-            } else if verseId < lastChapterId {
+            } else if verseId < lastVerseId {
                 nextTitle = "to verse \(verseId + 1)"
             } else {
                 nextTitle = ""
@@ -90,7 +90,7 @@ internal struct VerseDetailView: View {
                 chapterId += 1
                 verseId = 1
                 updateView()
-            } else if verseId < lastChapterId {
+            } else if verseId < lastVerseId {
                 verseId += 1
                 updateView()
             }

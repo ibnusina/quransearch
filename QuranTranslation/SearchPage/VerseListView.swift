@@ -14,14 +14,29 @@ struct VerseListView: View {
     @State var verses: [SearchResult] = []
     @State var selectedVerse: SearchResult = SearchResult()
     @State var tapped: Bool = false
+    @State var currentPage: Int = 0
+    let pageSize = 10
     
     var body: some View {
         NavigationView {
             VStack {
                 List(verses) { verse in
-                    VerseCellView(keyword:searchQuery, verse: verse).onTapGesture {
-                        selectedVerse = verse
-                        tapped = true
+                    if let lastElement = verses.last, verse == lastElement {
+                        VerseCellView(keyword:searchQuery, verse: verse).onTapGesture {
+                            selectedVerse = verse
+                            tapped = true
+                        }.onAppear {
+                            let newVerses = searchVerse(searchQuery, page: currentPage + 1, pageSize: pageSize)
+                            if newVerses.count > 0 {
+                                verses.append(contentsOf: newVerses)
+                                currentPage += 1
+                            }
+                        }
+                    } else {
+                        VerseCellView(keyword:searchQuery, verse: verse).onTapGesture {
+                            selectedVerse = verse
+                            tapped = true
+                        }
                     }
                 }
                 .listStyle(PlainListStyle())
@@ -31,7 +46,8 @@ struct VerseListView: View {
                         Text(language)
                     })
                 .searchable(text: $searchQuery).onChange(of: searchQuery) { newValue in
-                    verses = searchVerse(newValue, page: 0, pageSize: 10)
+                    currentPage = 0
+                    verses = searchVerse(newValue, page: currentPage, pageSize: pageSize)
                 }
                 NavigationLink("", isActive: $tapped) {
                     VerseDetailView(verseId: selectedVerse.verseNumber, chapterId: selectedVerse.chapterNumber)
@@ -63,6 +79,7 @@ struct VerseListView: View {
         
         return result
     }
+
 }
 
 

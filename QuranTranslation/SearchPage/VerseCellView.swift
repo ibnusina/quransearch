@@ -14,9 +14,8 @@ struct VerseCellView: View {
     var body: some View {
         HStack(spacing: 4){
             VStack(alignment: .leading, spacing: 4){
-                HStack(alignment: .firstTextBaseline, spacing: 4) {
-                    Text("Verse \(verse.verseNumber) of Chapter \(verse.chapterNumber) (\(verse.chapterName)/\(verse.chapterTranslation))").font(.system(size: 12, weight: .bold, design: .default))
-                }
+                Text("Chapter \(verse.chapterNumber) (\(verse.chapterName)/\(verse.chapterTranslation))").font(.system(size: 12, weight: .bold, design: .default))
+                Text("Verse \(verse.verseNumber)").font(.system(size: 12, weight: .bold, design: .default))
                 Text(verse.verse) { text in
                     if let range = text.range(of: keyword, options: .caseInsensitive) {
                         text[range].backgroundColor = Color(UIColor.systemGray)
@@ -37,7 +36,7 @@ struct VerseCellView_Previews: PreviewProvider {
 }
 
 
-struct SearchResult: Identifiable {
+struct SearchResult: Identifiable, Equatable {
     var id: String {
         "\(chapterNumber)-\(verseNumber)"
     }
