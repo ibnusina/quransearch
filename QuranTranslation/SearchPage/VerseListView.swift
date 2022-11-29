@@ -15,11 +15,16 @@ struct VerseListView: View {
     @State var selectedVerse: SearchResult = SearchResult()
     @State var tapped: Bool = false
     @State var currentPage: Int = 0
+    @State var totalVerse: Int = 0
     let pageSize = 10
     
     var body: some View {
         NavigationView {
-            VStack {
+            VStack(spacing: 0) {
+                if verses.count > 0 {
+                    Text("\"\(searchQuery)\" is found in \(totalVerse) verses")
+                    Divider()
+                }
                 List(verses) { verse in
                     if let lastElement = verses.last, verse == lastElement {
                         VerseCellView(keyword:searchQuery, verse: verse).onTapGesture {
@@ -59,6 +64,7 @@ struct VerseListView: View {
     func searchVerse(_ keyword: String, page: Int, pageSize: Int) -> [SearchResult] {
         var result: [SearchResult] = []
         let verses = localRealm.objects(Verse.self).filter("translation contains[c] %@", keyword)
+        totalVerse = verses.count
         
         for index in (page * pageSize)..<pageSize * (page + 1) {
             guard index < verses.count else { break }
