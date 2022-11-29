@@ -43,14 +43,10 @@ struct VerseListView: View {
     func searchVerse(_ keyword: String, page: Int, pageSize: Int) -> [SearchResult] {
         var result: [SearchResult] = []
         let verses = localRealm.objects(Verse.self).filter("translation contains[c] %@", keyword)
-        print(verses    )
         
-        for i in (page * pageSize)..<pageSize * (page + 1) {
-            print("masup \(i)")
-            let index = i
+        for index in (page * pageSize)..<pageSize * (page + 1) {
             guard index < verses.count else { break }
             let verse = verses[index]
-            print("masup lagi: \(verse)")
             if let chapter = localRealm.objects(Chapter.self).first(where: { chapter in chapter.verses.contains(verse) }) {
                 result.append(
                     SearchResult(
