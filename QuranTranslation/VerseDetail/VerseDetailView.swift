@@ -11,15 +11,17 @@ internal struct VerseDetailView: View {
     @State var verseDetail: VerseDetail = VerseDetail()
     @State var verseId: Int
     @State var chapterId: Int
+    let keyword: String
     @State private var prevTitle: String = ""
     @State private var nextTitle: String = ""
 
     @State var viewDidLoad: Bool = false
     
     
-    internal init(verseId: Int, chapterId: Int) {
+    internal init(verseId: Int, chapterId: Int, keyword: String) {
         self.verseId = verseId
         self.chapterId = chapterId
+        self.keyword = keyword
     }
     
     private func onViewDidLoad() {
@@ -47,9 +49,6 @@ internal struct VerseDetailView: View {
             
             if verseId == 1 && chapterId != 1 {
                 prevTitle = "to chapter \(chapterId - 1)"
-                if let prevChapterVerseId = localRealm.objects(Chapter.self).last(where: { chapter in chapter.chapterId == (chapterId - 1) })?.verses.last?.verseId {
-
-                }
             } else if verseId > 1 {
                 prevTitle = "to verse \(verseId - 1)"
             } else {
@@ -103,8 +102,15 @@ internal struct VerseDetailView: View {
             VStack {
                 ScrollView {
                     VStack(spacing: 8) {
-                        Text(verseDetail.verseTranslation).frame(maxWidth: .infinity, alignment: .leading)
-                        Text(verseDetail.verseArabic).frame(maxWidth: .infinity, alignment: .trailing)
+                        Text(verseDetail.verseTranslation){ text in
+                            if let range = text.range(of: keyword, options: .caseInsensitive) {
+                                text[range].backgroundColor = Color(UIColor.systemGray)
+                            }
+                        }.multilineTextAlignment(.leading)
+                            .frame(maxWidth: .infinity, alignment: .leading)
+                        Text(verseDetail.verseArabic)
+                            .multilineTextAlignment(.trailing)
+                            .frame(maxWidth: .infinity, alignment: .trailing)
                     }
                 }
                 HStack{
@@ -157,6 +163,6 @@ internal struct VerseDetail {
 
 struct AyahDetailView_Previews: PreviewProvider {
     static var previews: some View {
-        VerseDetailView(verseId: 1, chapterId: 1)
+        VerseDetailView(verseId: 1, chapterId: 1, keyword: "abc")
     }
 }

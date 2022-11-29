@@ -50,7 +50,7 @@ struct VerseListView: View {
                     verses = searchVerse(newValue, page: currentPage, pageSize: pageSize)
                 }
                 NavigationLink("", isActive: $tapped) {
-                    VerseDetailView(verseId: selectedVerse.verseNumber, chapterId: selectedVerse.chapterNumber)
+                    VerseDetailView(verseId: selectedVerse.verseNumber, chapterId: selectedVerse.chapterNumber, keyword: searchQuery)
                 }.hidden().frame(width: 0, height: 0, alignment: .bottomLeading)
             }
         }
