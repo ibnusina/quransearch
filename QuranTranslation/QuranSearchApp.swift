@@ -13,14 +13,8 @@ let localRealm = try! Realm(configuration: Realm.Configuration(readOnly: false, 
 @main
 struct QuranSearchApp: SwiftUI.App {
     init() {
-        
-        
         if localRealm.objects(Chapter.self).count <= 0 {
-            let chapters = Bundle.main.decode([Chapter].self, from: "quran_en.json", keyPath: "quran")
-            
-            try! localRealm.write {
-                localRealm.add(chapters)
-            }
+            loadLanguage()
         }
     }
     
