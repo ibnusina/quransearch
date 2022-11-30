@@ -10,12 +10,15 @@ import RealmSwift
 
 struct VerseListView: View {
     @State var searchQuery = ""
-    @State var language = "Bahasa: 🇮🇩"
+    @State var language = "Bahasa: \(UserDefaults.getLanguage()!.flag)"
     @State var verses: [SearchResult] = []
     @State var selectedVerse: SearchResult = SearchResult()
     @State var tapped: Bool = false
     @State var currentPage: Int = 0
     @State var totalVerse: Int = 0
+    @State var sheetPresented: Bool = false
+    @State var selectedLanguage: LanguageDirectory = UserDefaults.getLanguage()!
+    let languages = translationLanguages
     let pageSize = 10
     
     var body: some View {
@@ -47,9 +50,29 @@ struct VerseListView: View {
                 .listStyle(PlainListStyle())
                 .navigationBarTitle("Quran Search")
                 .navigationBarItems(
-                    trailing: Button(action: {}) {
+                    trailing: Button(action: {
+                        sheetPresented = true
+                    }) {
                         Text(language)
+                    }.sheet(isPresented: $sheetPresented, content: {
+                        Text("Change Language")
+                        List(languages) { language in
+                            HStack {
+                                Text(language.flag)
+                                Text(language.name)
+                                Color.white
+                                Text("\(language == selectedLanguage ? " ✅": "")")
+                            }.onTapGesture {
+                                sheetPresented = false
+                                if (language != selectedLanguage) {
+                                    self.language = "Bahasa: \(language.flag)"
+                                    self.selectedLanguage = language
+                                    loadLanguage(language)
+                                }
+                            }
+                        }
                     })
+                )
                 .searchable(text: $searchQuery).onChange(of: searchQuery) { newValue in
                     currentPage = 0
                     verses = searchVerse(newValue, page: currentPage, pageSize: pageSize)

@@ -7,9 +7,12 @@
 
 import Foundation
 
-internal struct LanguageDirectory: Codable {
+internal struct LanguageDirectory: Codable, Identifiable, Hashable {
+    var id: String { code.rawValue }
+    
     internal let file: String
     internal let flag: String
+    internal let name: String
     internal let code: LanguageCode
 }
 
@@ -19,8 +22,8 @@ internal enum LanguageCode: String, Codable {
 }
 
 internal let translationLanguages: [LanguageDirectory] = [
-    LanguageDirectory(file: "quran_id.json", flag: "🇮🇩", code: .ID),
-    LanguageDirectory(file: "quran_en.json", flag: "🇬🇧", code: .EN)
+    LanguageDirectory(file: "quran_id.json", flag: "🇮🇩", name: "Indonesia", code: .ID),
+    LanguageDirectory(file: "quran_en.json", flag: "🇬🇧", name: "English", code: .EN)
 ]
 
 internal let translationStorageKey: String = "translationStorageKey"
@@ -31,6 +34,7 @@ internal func loadLanguage(_ language: LanguageDirectory? = nil) {
     let chapters = Bundle.main.decode([Chapter].self, from: newLanguage.file, keyPath: nil)
     
     try! localRealm.write {
+        localRealm.deleteAll()
         localRealm.add(chapters)
     }
     
