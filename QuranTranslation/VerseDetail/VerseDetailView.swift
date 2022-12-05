@@ -48,17 +48,17 @@ internal struct VerseDetailView: View {
             )
             
             if verseId == 1 && chapterId != 1 {
-                prevTitle = "to chapter \(chapterId - 1)"
+                prevTitle = "\("to_chapter".localized()) \(chapterId - 1)"
             } else if verseId > 1 {
-                prevTitle = "to verse \(verseId - 1)"
+                prevTitle = "\("to_verse".localized()) \(verseId - 1)"
             } else {
                 prevTitle = ""
             }
 
             if verseId == lastVerseId && chapterId != lastChapterId {
-                nextTitle = "to chapter \(chapterId + 1)"
+                nextTitle = "\("to_chapter".localized()) \(chapterId + 1)"
             } else if verseId < lastVerseId {
-                nextTitle = "to verse \(verseId + 1)"
+                nextTitle = "\("to_verse".localized()) \(verseId + 1)"
             } else {
                 nextTitle = ""
             }
@@ -118,14 +118,14 @@ internal struct VerseDetailView: View {
                         goToPrev()
                     }
                     Spacer()
-                    Text("verse: \(verseDetail.verseNumber)")
+                    Text("\("verse".localized()): \(verseDetail.verseNumber)")
                     Spacer()
                     Button(nextTitle, role: nil) {
                         goToNext()
                     }
                 }
             }
-        }.navigationTitle("Chapter \(verseDetail.chapterNumber): \(verseDetail.chapterName)")
+        }.navigationTitle("\("chapter".localized()) \(verseDetail.chapterNumber): \(verseDetail.chapterName)")
             .navigationBarTitleDisplayMode(.inline)
             .onAppear{
                 onViewDidLoad()

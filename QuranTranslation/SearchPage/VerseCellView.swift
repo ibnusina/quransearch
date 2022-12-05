@@ -14,8 +14,8 @@ struct VerseCellView: View {
     var body: some View {
         HStack(spacing: 4){
             VStack(alignment: .leading, spacing: 4){
-                Text("Chapter \(verse.chapterNumber) (\(verse.chapterName)/\(verse.chapterTranslation))").font(.system(size: 12, weight: .bold, design: .default))
-                Text("Verse \(verse.verseNumber)").font(.system(size: 12, weight: .bold, design: .default))
+                Text("\("chapter".localized()) \(verse.chapterNumber) (\(verse.chapterName)/\(verse.chapterTranslation))").font(.system(size: 12, weight: .bold, design: .default))
+                Text("\("verse".localized()) \(verse.verseNumber)").font(.system(size: 12, weight: .bold, design: .default))
                 Text(verse.verse) { text in
                     if let range = text.range(of: keyword, options: .caseInsensitive) {
                         text[range].backgroundColor = Color(UIColor.systemGray)

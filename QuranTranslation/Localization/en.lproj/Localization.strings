@@ -6,3 +6,10 @@
   
 */
 "language_navigation" = "Language";
+"verse" = "Verse";
+"chapter" = "Chapter";
+"to_verse" = "to Verse";
+"to_chapter" = "to Chapter";
+"choose_language" = "Choose Language";
+"result_count" = "\"%@\" is found in %d verses";
+"search_in_verse" = "Search in verse";

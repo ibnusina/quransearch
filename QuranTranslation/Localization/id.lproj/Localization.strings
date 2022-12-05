@@ -6,3 +6,10 @@
   
 */
 "language_navigation" = "Bahasa";
+"verse" = "Ayat";
+"chapter" = "Surat";
+"to_verse" = "ke Ayat";
+"to_chapter" = "ke Surat";
+"choose_language" = "Pilih Bahasa";
+"result_count" = "Kata \"%@\" ditemukan dalam %d ayat";
+"search_in_verse" = "Cari dalam ayat";

@@ -25,7 +25,7 @@ struct VerseListView: View {
         NavigationView {
             VStack(spacing: 0) {
                 if verses.count > 0 {
-                    Text("\"\(searchQuery)\" is found in \(totalVerse) verses")
+                    Text(String(format: "result_count".localized(), searchQuery, totalVerse))
                     Divider()
                 }
                 List(verses) { verse in
@@ -55,7 +55,7 @@ struct VerseListView: View {
                     }) {
                         Text(language)
                     }.sheet(isPresented: $sheetPresented, content: {
-                        Text("Change Language")
+                        Text("choose_language".localized())
                         List(languages) { language in
                             HStack {
                                 Text(language.flag)
@@ -73,7 +73,7 @@ struct VerseListView: View {
                         }
                     })
                 )
-                .searchable(text: $searchQuery).onChange(of: searchQuery) { newValue in
+                .searchable(text: $searchQuery, prompt: "search_in_verse".localized()).onChange(of: searchQuery) { newValue in
                     currentPage = 0
                     verses = searchVerse(newValue, page: currentPage, pageSize: pageSize)
                 }
