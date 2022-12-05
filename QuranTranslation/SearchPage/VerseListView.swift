@@ -21,6 +21,22 @@ struct VerseListView: View {
     let languages = translationLanguages
     let pageSize = 10
     
+    public init() {
+        let coloredAppearance = UINavigationBarAppearance()
+        coloredAppearance.configureWithOpaqueBackground()
+        coloredAppearance.backgroundColor = UIColor(red: 51.0/255.0, green: 59.0/255.0, blue: 106.0/255.0, alpha: 1)
+
+        coloredAppearance.titleTextAttributes = [.foregroundColor: UIColor.white]
+        coloredAppearance.largeTitleTextAttributes = [.foregroundColor: UIColor.white]
+
+        UINavigationBar.appearance().standardAppearance = coloredAppearance
+        UINavigationBar.appearance().compactAppearance = coloredAppearance
+        UINavigationBar.appearance().scrollEdgeAppearance = coloredAppearance
+        
+        UITextField.appearance(whenContainedInInstancesOf: [UISearchBar.self]).backgroundColor = .white
+        
+    }
+    
     var body: some View {
         NavigationView {
             VStack(spacing: 0) {
@@ -77,11 +93,12 @@ struct VerseListView: View {
                     currentPage = 0
                     verses = searchVerse(newValue, page: currentPage, pageSize: pageSize)
                 }
+                
                 NavigationLink("", isActive: $tapped) {
                     VerseDetailView(verseId: selectedVerse.verseNumber, chapterId: selectedVerse.chapterNumber, keyword: searchQuery)
                 }.hidden().frame(width: 0, height: 0, alignment: .bottomLeading)
             }
-        }
+        }.tint(.white)
     }
     
     func searchVerse(_ keyword: String, page: Int, pageSize: Int) -> [SearchResult] {
