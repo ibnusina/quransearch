@@ -7,13 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		64412805293CF8EB0056498C /* SearchPageString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64412804293CF8EB0056498C /* SearchPageString.swift */; };
 		64BC1C382937272000BC88B5 /* quran_id.json in Resources */ = {isa = PBXBuildFile; fileRef = 64BC1C372937272000BC88B5 /* quran_id.json */; };
+		64BC8720293DE2980071D94A /* Localization.strings in Resources */ = {isa = PBXBuildFile; fileRef = 64BC8722293DE2980071D94A /* Localization.strings */; };
 		64C3BBD129371C7000DDB491 /* Language.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64C3BBD029371C7000DDB491 /* Language.swift */; };
 		A93A251328ACFF73008D5673 /* QuranSearchApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A93A251228ACFF73008D5673 /* QuranSearchApp.swift */; };
 		A93A251528ACFF73008D5673 /* VerseListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A93A251428ACFF73008D5673 /* VerseListView.swift */; };
 		A93A251728ACFF76008D5673 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A93A251628ACFF76008D5673 /* Assets.xcassets */; };
-		A93A251A28ACFF76008D5673 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A93A251928ACFF76008D5673 /* Preview Assets.xcassets */; };
 		A965173E28C4B2C800FB660B /* VerseCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A965173D28C4B2C800FB660B /* VerseCellView.swift */; };
 		A992BD1E28BB78FD00BE71D5 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = A992BD1D28BB78FD00BE71D5 /* Model.swift */; };
 		A992BD2028BB864D00BE71D5 /* NestedDecodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A992BD1F28BB864D00BE71D5 /* NestedDecodable.swift */; };
@@ -24,14 +23,14 @@
 
 /* Begin PBXFileReference section */
 		2F94C82C18A226A93C27533B /* Pods_QuranTranslation.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_QuranTranslation.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		64412804293CF8EB0056498C /* SearchPageString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchPageString.swift; sourceTree = "<group>"; };
 		64BC1C372937272000BC88B5 /* quran_id.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = quran_id.json; sourceTree = "<group>"; };
+		64BC8721293DE2980071D94A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localization.strings; sourceTree = "<group>"; };
+		64BC8723293DE2AF0071D94A /* id */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = id; path = id.lproj/Localization.strings; sourceTree = "<group>"; };
 		64C3BBD029371C7000DDB491 /* Language.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Language.swift; sourceTree = "<group>"; };
 		A93A250F28ACFF73008D5673 /* QuranTranslation.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QuranTranslation.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A93A251228ACFF73008D5673 /* QuranSearchApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuranSearchApp.swift; sourceTree = "<group>"; };
 		A93A251428ACFF73008D5673 /* VerseListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerseListView.swift; sourceTree = "<group>"; };
 		A93A251628ACFF76008D5673 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		A93A251928ACFF76008D5673 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		A965173D28C4B2C800FB660B /* VerseCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerseCellView.swift; sourceTree = "<group>"; };
 		A992BD1D28BB78FD00BE71D5 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		A992BD1F28BB864D00BE71D5 /* NestedDecodable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NestedDecodable.swift; sourceTree = "<group>"; };
@@ -56,8 +55,8 @@
 		64412803293A028C0056498C /* Localization */ = {
 			isa = PBXGroup;
 			children = (
-				64412804293CF8EB0056498C /* SearchPageString.swift */,
 				64C3BBD029371C7000DDB491 /* Language.swift */,
+				64BC8722293DE2980071D94A /* Localization.strings */,
 			);
 			path = Localization;
 			sourceTree = "<group>";
@@ -97,19 +96,10 @@
 				A93A251628ACFF76008D5673 /* Assets.xcassets */,
 				A9A1D2AA28BA626B00171A23 /* quran_en.json */,
 				64BC1C372937272000BC88B5 /* quran_id.json */,
-				A93A251828ACFF76008D5673 /* Preview Content */,
 				A992BD1D28BB78FD00BE71D5 /* Model.swift */,
 				A992BD1F28BB864D00BE71D5 /* NestedDecodable.swift */,
 			);
 			path = QuranTranslation;
-			sourceTree = "<group>";
-		};
-		A93A251828ACFF76008D5673 /* Preview Content */ = {
-			isa = PBXGroup;
-			children = (
-				A93A251928ACFF76008D5673 /* Preview Assets.xcassets */,
-			);
-			path = "Preview Content";
 			sourceTree = "<group>";
 		};
 		A965173C28C4B22700FB660B /* SearchPage */ = {
@@ -190,7 +180,7 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
-				Base,
+				id,
 			);
 			mainGroup = A93A250628ACFF73008D5673;
 			productRefGroup = A93A251028ACFF73008D5673 /* Products */;
@@ -208,9 +198,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				64BC1C382937272000BC88B5 /* quran_id.json in Resources */,
-				A93A251A28ACFF76008D5673 /* Preview Assets.xcassets in Resources */,
 				A93A251728ACFF76008D5673 /* Assets.xcassets in Resources */,
 				A9A1D2AB28BA626B00171A23 /* quran_en.json in Resources */,
+				64BC8720293DE2980071D94A /* Localization.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -266,7 +256,6 @@
 				A9F6381D28FDB7E100B1BBAC /* VerseDetailView.swift in Sources */,
 				A992BD1E28BB78FD00BE71D5 /* Model.swift in Sources */,
 				A93A251528ACFF73008D5673 /* VerseListView.swift in Sources */,
-				64412805293CF8EB0056498C /* SearchPageString.swift in Sources */,
 				64C3BBD129371C7000DDB491 /* Language.swift in Sources */,
 				A965173E28C4B2C800FB660B /* VerseCellView.swift in Sources */,
 				A992BD2028BB864D00BE71D5 /* NestedDecodable.swift in Sources */,
@@ -276,11 +265,24 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXVariantGroup section */
+		64BC8722293DE2980071D94A /* Localization.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				64BC8721293DE2980071D94A /* en */,
+				64BC8723293DE2AF0071D94A /* id */,
+			);
+			name = Localization.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
 /* Begin XCBuildConfiguration section */
 		A93A251B28ACFF76008D5673 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
@@ -334,6 +336,7 @@
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
@@ -342,6 +345,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
@@ -388,6 +392,7 @@
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				VALIDATE_PRODUCT = YES;
 			};
@@ -401,7 +406,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"QuranTranslation/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "";
 				DEVELOPMENT_TEAM = C39XVMFQ52;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -431,7 +436,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"QuranTranslation/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "";
 				DEVELOPMENT_TEAM = C39XVMFQ52;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;

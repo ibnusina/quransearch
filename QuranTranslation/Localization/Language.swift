@@ -71,4 +71,13 @@ extension UserDefaults {
     }
 }
 
+extension String {
+    func localized() ->String {
+        let lang = UserDefaults.getLanguage().code.rawValue
+        let path = Bundle.main.path(forResource: lang, ofType: "lproj")
+        let bundle = Bundle(path: path!)
 
+        return NSLocalizedString(self, tableName: "Localization", bundle: bundle!, value: "", comment: "")
+    }
+    
+}

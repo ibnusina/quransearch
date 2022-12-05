@@ -10,7 +10,7 @@ import RealmSwift
 
 struct VerseListView: View {
     @State var searchQuery = ""
-    @State var language = "Bahasa: \(UserDefaults.getLanguage().flag)"
+    @State var language = "\("language_navigation".localized()): \(UserDefaults.getLanguage().flag)"
     @State var verses: [SearchResult] = []
     @State var selectedVerse: SearchResult = SearchResult()
     @State var tapped: Bool = false
@@ -65,9 +65,9 @@ struct VerseListView: View {
                             }.onTapGesture {
                                 sheetPresented = false
                                 if (language != selectedLanguage) {
-                                    self.language = "Bahasa: \(language.flag)"
-                                    self.selectedLanguage = language
                                     loadLanguage(language)
+                                    self.language = "\("language_navigation".localized()): \(language.flag)"
+                                    self.selectedLanguage = language
                                 }
                             }
                         }
