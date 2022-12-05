@@ -10,14 +10,14 @@ import RealmSwift
 
 struct VerseListView: View {
     @State var searchQuery = ""
-    @State var language = "Bahasa: \(UserDefaults.getLanguage()!.flag)"
+    @State var language = "Bahasa: \(UserDefaults.getLanguage().flag)"
     @State var verses: [SearchResult] = []
     @State var selectedVerse: SearchResult = SearchResult()
     @State var tapped: Bool = false
     @State var currentPage: Int = 0
     @State var totalVerse: Int = 0
     @State var sheetPresented: Bool = false
-    @State var selectedLanguage: LanguageDirectory = UserDefaults.getLanguage()!
+    @State var selectedLanguage: LanguageDirectory = UserDefaults.getLanguage()
     let languages = translationLanguages
     let pageSize = 10
     

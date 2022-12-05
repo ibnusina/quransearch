@@ -53,12 +53,21 @@ extension UserDefaults {
         }
     }
     
-    internal static func getLanguage() -> LanguageDirectory? {
+    internal static func getLanguage() -> LanguageDirectory {
+        let language: LanguageDirectory
         if let data = UserDefaults.standard.object(forKey: translationStorageKey) as? Data,
-           let language = try? JSONDecoder().decode(LanguageDirectory.self, from: data) {
-             return language
+           let newLanguage = try? JSONDecoder().decode(LanguageDirectory.self, from: data) {
+            language = newLanguage
+        } else if let languageCode = Locale.current.languageCode, let newLanguage = translationLanguages.first(where: { language in
+            return language.code.rawValue == languageCode
+        }) {
+            language = newLanguage
+            UserDefaults.setLanguage(language)
+        } else {
+            language = translationLanguages[0]
+            UserDefaults.setLanguage(language)
         }
-        return nil
+        return language
     }
 }
 
