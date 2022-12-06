@@ -24,7 +24,7 @@ struct VerseListView: View {
     public init() {
         let coloredAppearance = UINavigationBarAppearance()
         coloredAppearance.configureWithOpaqueBackground()
-        coloredAppearance.backgroundColor = UIColor(red: 51.0/255.0, green: 59.0/255.0, blue: 106.0/255.0, alpha: 1)
+        coloredAppearance.backgroundColor = UIColor(Color.primaryBlue)
 
         coloredAppearance.titleTextAttributes = [.foregroundColor: UIColor.white]
         coloredAppearance.largeTitleTextAttributes = [.foregroundColor: UIColor.white]

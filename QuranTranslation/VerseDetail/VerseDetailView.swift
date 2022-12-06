@@ -116,14 +116,20 @@ internal struct VerseDetailView: View {
                 HStack{
                     Button(prevTitle, role: nil) {
                         goToPrev()
-                    }
+                    }.padding(.all, 12)
+                        .foregroundColor(.white)
+                        .background(Color.actionTeal)
                     Spacer()
-                    Text("\("verse".localized()): \(verseDetail.verseNumber)")
+                    Text("\("verse".localized()): \(verseDetail.verseNumber)").padding(.all, 12)
                     Spacer()
                     Button(nextTitle, role: nil) {
                         goToNext()
-                    }
-                }
+                    }.padding(.all, 12)
+                        .foregroundColor(.white)
+                        .background(Color.actionTeal)
+                }.padding(.all, 0)
+                    .foregroundColor(.white)
+                    .background(Color.secondaryBlue)
             }
         }.navigationTitle("\("chapter".localized()) \(verseDetail.chapterNumber): \(verseDetail.chapterName)")
             .navigationBarTitleDisplayMode(.inline)
