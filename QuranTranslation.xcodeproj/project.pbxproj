@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		64860069293EFCA000769A73 /* ColorTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64860068293EFCA000769A73 /* ColorTheme.swift */; };
+		6486006B293F2CEA00769A73 /* RoundedCorner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6486006A293F2CEA00769A73 /* RoundedCorner.swift */; };
 		64BC1C382937272000BC88B5 /* quran_id.json in Resources */ = {isa = PBXBuildFile; fileRef = 64BC1C372937272000BC88B5 /* quran_id.json */; };
 		64BC8720293DE2980071D94A /* Localization.strings in Resources */ = {isa = PBXBuildFile; fileRef = 64BC8722293DE2980071D94A /* Localization.strings */; };
 		64C3BBD129371C7000DDB491 /* Language.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64C3BBD029371C7000DDB491 /* Language.swift */; };
@@ -25,6 +26,7 @@
 /* Begin PBXFileReference section */
 		2F94C82C18A226A93C27533B /* Pods_QuranTranslation.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_QuranTranslation.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		64860068293EFCA000769A73 /* ColorTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorTheme.swift; sourceTree = "<group>"; };
+		6486006A293F2CEA00769A73 /* RoundedCorner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedCorner.swift; sourceTree = "<group>"; };
 		64BC1C372937272000BC88B5 /* quran_id.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = quran_id.json; sourceTree = "<group>"; };
 		64BC8721293DE2980071D94A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localization.strings; sourceTree = "<group>"; };
 		64BC8723293DE2AF0071D94A /* id */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = id; path = id.lproj/Localization.strings; sourceTree = "<group>"; };
@@ -67,6 +69,7 @@
 			isa = PBXGroup;
 			children = (
 				64860068293EFCA000769A73 /* ColorTheme.swift */,
+				6486006A293F2CEA00769A73 /* RoundedCorner.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -267,6 +270,7 @@
 				A9F6381D28FDB7E100B1BBAC /* VerseDetailView.swift in Sources */,
 				A992BD1E28BB78FD00BE71D5 /* Model.swift in Sources */,
 				A93A251528ACFF73008D5673 /* VerseListView.swift in Sources */,
+				6486006B293F2CEA00769A73 /* RoundedCorner.swift in Sources */,
 				64C3BBD129371C7000DDB491 /* Language.swift in Sources */,
 				A965173E28C4B2C800FB660B /* VerseCellView.swift in Sources */,
 				64860069293EFCA000769A73 /* ColorTheme.swift in Sources */,

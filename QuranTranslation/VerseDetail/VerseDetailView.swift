@@ -48,17 +48,17 @@ internal struct VerseDetailView: View {
             )
             
             if verseId == 1 && chapterId != 1 {
-                prevTitle = "\("to_chapter".localized()) \(chapterId - 1)"
+                prevTitle = "← \("to_chapter".localized()) \(chapterId - 1)"
             } else if verseId > 1 {
-                prevTitle = "\("to_verse".localized()) \(verseId - 1)"
+                prevTitle = "← \("to_verse".localized()) \(verseId - 1)"
             } else {
                 prevTitle = ""
             }
 
             if verseId == lastVerseId && chapterId != lastChapterId {
-                nextTitle = "\("to_chapter".localized()) \(chapterId + 1)"
+                nextTitle = "\("to_chapter".localized()) \(chapterId + 1) →"
             } else if verseId < lastVerseId {
-                nextTitle = "\("to_verse".localized()) \(verseId + 1)"
+                nextTitle = "\("to_verse".localized()) \(verseId + 1) →"
             } else {
                 nextTitle = ""
             }
@@ -99,38 +99,48 @@ internal struct VerseDetailView: View {
     
     var body: some View {
         NavigationView {
-            VStack {
+            VStack(spacing: 12) {
+                ZStack{
+                    Text("\("verse".localized()) \(verseDetail.verseNumber)").padding(.top, 12).foregroundColor(.white)
+                }.frame(maxWidth: .infinity)
+                    .background(Color.secondaryBlue)
+                
                 ScrollView {
-                    VStack(spacing: 8) {
+                    VStack(spacing: 0) {
                         Text(verseDetail.verseTranslation){ text in
                             if let range = text.range(of: keyword, options: .caseInsensitive) {
                                 text[range].backgroundColor = Color(UIColor.systemGray)
                             }
                         }.multilineTextAlignment(.leading)
                             .frame(maxWidth: .infinity, alignment: .leading)
+                            .padding(EdgeInsets(top: 12, leading: 16, bottom: 0, trailing: 16))
                         Text(verseDetail.verseArabic)
                             .multilineTextAlignment(.trailing)
                             .frame(maxWidth: .infinity, alignment: .trailing)
+                            .padding(EdgeInsets(top: 24, leading: 16, bottom: 0, trailing: 16))
                     }
-                }
-                HStack{
-                    Button(prevTitle, role: nil) {
-                        goToPrev()
-                    }.padding(.all, 12)
-                        .foregroundColor(.white)
-                        .background(Color.actionTeal)
-                    Spacer()
-                    Text("\("verse".localized()): \(verseDetail.verseNumber)").padding(.all, 12)
-                    Spacer()
-                    Button(nextTitle, role: nil) {
-                        goToNext()
-                    }.padding(.all, 12)
-                        .foregroundColor(.white)
-                        .background(Color.actionTeal)
-                }.padding(.all, 0)
-                    .foregroundColor(.white)
-                    .background(Color.secondaryBlue)
-            }
+                }.background(Color.white)
+                HStack(spacing: 20){
+                    ZStack {
+                        Color(Color.actionTeal.cgColor!)
+                        Button() {
+                            goToPrev()
+                        } label: {
+                            Text(prevTitle).frame(maxWidth: .infinity).padding(.all, 12).font(.system(size: 16, weight: .bold, design: .default))
+                        }
+                    }.cornerRadius(8, corners: [.topRight, .bottomRight]).opacity(prevTitle == "" ? 0 : 1)
+                    
+                    ZStack {
+                        Color(Color.actionTeal.cgColor!)
+                        Button() {
+                            goToNext()
+                        } label: {
+                            Text(nextTitle).frame(maxWidth: .infinity).padding(.all, 12).font(.system(size: 16, weight: .bold, design: .default))
+                        }
+                    }.cornerRadius(8, corners: [.topLeft, .bottomLeft]).opacity(nextTitle == "" ? 0 : 1)
+                    
+                }.frame(maxWidth:.infinity, idealHeight: 40, maxHeight: 40)
+            }.background(Color.secondaryBlue)
         }.navigationTitle("\("chapter".localized()) \(verseDetail.chapterNumber): \(verseDetail.chapterName)")
             .navigationBarTitleDisplayMode(.inline)
             .onAppear{

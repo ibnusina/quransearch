@@ -41,8 +41,10 @@ struct VerseListView: View {
         NavigationView {
             VStack(spacing: 0) {
                 if verses.count > 0 {
-                    Text(String(format: "result_count".localized(), searchQuery, totalVerse))
-                    Divider()
+                    ZStack{
+                        Text(String(format: "result_count".localized(), searchQuery, totalVerse)).foregroundColor(.white).padding(EdgeInsets(top: 12, leading: 16, bottom: 12, trailing: 16))
+                    }.frame(maxWidth: .infinity)
+                        .background(Color.secondaryBlue)
                 }
                 List(verses) { verse in
                     if let lastElement = verses.last, verse == lastElement {
