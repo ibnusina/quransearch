@@ -52,10 +52,12 @@ struct VerseListView: View {
                             selectedVerse = verse
                             tapped = true
                         }.onAppear {
-                            let newVerses = searchVerse(searchQuery, page: currentPage + 1, pageSize: pageSize)
-                            if newVerses.count > 0 {
-                                verses.append(contentsOf: newVerses)
-                                currentPage += 1
+                            if verses.count != totalVerse {
+                                let newVerses = searchVerse(searchQuery, page: currentPage + 1, pageSize: pageSize)
+                                if newVerses.count > 0 {
+                                    verses.append(contentsOf: newVerses)
+                                    currentPage += 1
+                                }
                             }
                         }
                     } else {
