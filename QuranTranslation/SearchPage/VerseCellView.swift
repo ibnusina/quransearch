@@ -14,18 +14,17 @@ struct VerseCellView: View {
     var body: some View {
         HStack(spacing: 4){
             VStack(alignment: .leading, spacing: 4){
-                Text("\("chapter".localized()) \(verse.chapterNumber) (\(verse.chapterName)/\(verse.chapterTranslation))").font(.system(size: 12, weight: .bold, design: .default))
-                Text("\("verse".localized()) \(verse.verseNumber)").font(.system(size: 12, weight: .bold, design: .default))
+                Text("\("chapter".localized()) \(verse.chapterNumber) (\(verse.chapterName)/\(verse.chapterTranslation))").font(.system(size: 14, weight: .bold, design: .default))
+                Text("\("verse".localized()) \(verse.verseNumber)").font(.system(size: 14, weight: .bold, design: .default))
                 Text(verse.verse) { text in
                     if let range = text.range(of: keyword, options: .caseInsensitive) {
                         text[range].backgroundColor = Color(UIColor.systemGray)
                     }
-                }.multilineTextAlignment(.leading).lineLimit(2).padding(.init(top: 0, leading: 0, bottom: 4, trailing: 0))
+                }.multilineTextAlignment(.leading).lineLimit(2)
                 
             }
             Spacer(minLength: 0)
-        }.padding(EdgeInsets(top: 12, leading: 0, bottom: 12, trailing: 0))
-        
+        }.padding(EdgeInsets(top: 12, leading: 16, bottom: 12, trailing: 16))
     }
 }
 

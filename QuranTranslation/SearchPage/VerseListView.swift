@@ -59,12 +59,12 @@ struct VerseListView: View {
                                     currentPage += 1
                                 }
                             }
-                        }
+                        }.listRowInsets(EdgeInsets())
                     } else {
                         VerseCellView(keyword:searchQuery, verse: verse).onTapGesture {
                             selectedVerse = verse
                             tapped = true
-                        }
+                        }.listRowInsets(EdgeInsets())
                     }
                 }
                 .listStyle(PlainListStyle())
