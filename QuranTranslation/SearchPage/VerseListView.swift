@@ -35,43 +35,60 @@ struct VerseListView: View {
         
         UITextField.appearance(whenContainedInInstancesOf: [UISearchBar.self]).backgroundColor = .white
         
+        var layoutConfig = UICollectionLayoutListConfiguration(appearance: .plain)
+        layoutConfig.headerMode = .supplementary
+        layoutConfig.headerTopPadding = 0
+        let listLayout = UICollectionViewCompositionalLayout.list(using: layoutConfig)
+        UICollectionView.appearance().collectionViewLayout = listLayout
+        
     }
     
     var body: some View {
         NavigationView {
-            VStack(spacing: 0) {
-                SearchBar(text: $searchQuery, onChange: { newValue in
-                    currentPage = 0
-                    verses = searchVerse(newValue, page: currentPage, pageSize: pageSize)
-                }).tint(.gray)
-                Color(Color.primaryBlue.cgColor!).frame(height:8)
-                if verses.count > 0 {
-                    ZStack{
-                        Text(String(format: "result_count".localized(), searchQuery, totalVerse)).foregroundColor(.white).padding(EdgeInsets(top: 12, leading: 16, bottom: 12, trailing: 16))
-                    }.frame(maxWidth: .infinity)
-                        .background(Color.secondaryBlue)
-                }
-                List(verses) { verse in
-                    if let lastElement = verses.last, verse == lastElement {
-                        VerseCellView(keyword:searchQuery, verse: verse).onTapGesture {
-                            selectedVerse = verse
-                            tapped = true
-                        }.onAppear {
-                            if verses.count != totalVerse {
-                                let newVerses = searchVerse(searchQuery, page: currentPage + 1, pageSize: pageSize)
-                                if newVerses.count > 0 {
-                                    verses.append(contentsOf: newVerses)
-                                    currentPage += 1
-                                }
+            ZStack {
+                List() {
+                    Section {
+                        ForEach(verses) { verse in
+                            if let lastElement = verses.last, verse == lastElement {
+                                VerseCellView(keyword:searchQuery, verse: verse).onTapGesture {
+                                    selectedVerse = verse
+                                    tapped = true
+                                }.onAppear {
+                                    if verses.count != totalVerse {
+                                        let newVerses = searchVerse(searchQuery, page: currentPage + 1, pageSize: pageSize)
+                                        if newVerses.count > 0 {
+                                            verses.append(contentsOf: newVerses)
+                                            currentPage += 1
+                                        }
+                                    }
+                                }.listRowInsets(EdgeInsets())
+                            } else {
+                                VerseCellView(keyword:searchQuery, verse: verse).onTapGesture {
+                                    selectedVerse = verse
+                                    tapped = true
+                                }.listRowInsets(EdgeInsets())
+                            }
+                        }
+                    } header: {
+                        VStack(spacing: 0) {
+                            SearchBar(text: $searchQuery, onChange: { newValue in
+                                currentPage = 0
+                                verses = searchVerse(newValue, page: currentPage, pageSize: pageSize)
+                            }).tint(.gray).listRowInsets(EdgeInsets())
+                            Color(Color.primaryBlue.cgColor!).frame(height:8).tint(.gray).listRowInsets(EdgeInsets())
+                            if verses.count > 0 {
+                                ZStack{
+                                    Text(String(format: "result_count".localized(), searchQuery, totalVerse)).foregroundColor(.white).padding(EdgeInsets(top: 12, leading: 16, bottom: 12, trailing: 16))
+                                }.frame(maxWidth: .infinity)
+                                    .background(Color.secondaryBlue).tint(.gray).listRowInsets(EdgeInsets())
                             }
                         }.listRowInsets(EdgeInsets())
-                    } else {
-                        VerseCellView(keyword:searchQuery, verse: verse).onTapGesture {
-                            selectedVerse = verse
-                            tapped = true
-                        }.listRowInsets(EdgeInsets())
-                    }
+                        
+                    }.listRowInsets(EdgeInsets())
+
+                    
                 }
+                .background(Color.primaryBlue)
                 .listStyle(PlainListStyle())
                 .navigationBarTitle("Quran Search", displayMode: .automatic)
                 .navigationBarItems(
@@ -97,12 +114,11 @@ struct VerseListView: View {
                             }
                         }
                     })
-                )
-                
+                ).tint(.white)
                 NavigationLink("Custom Title", isActive: $tapped) {
                     VerseDetailView(verseId: selectedVerse.verseNumber, chapterId: selectedVerse.chapterNumber, keyword: searchQuery)
                 }.hidden().frame(width: 0, height: 0, alignment: .bottomLeading)
-            }
+            }.background(Color.primaryBlue)
         }.tint(.white)
     }
     

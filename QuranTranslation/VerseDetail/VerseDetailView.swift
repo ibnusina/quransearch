@@ -145,7 +145,7 @@ internal struct VerseDetailView: View {
             .navigationBarTitleDisplayMode(.inline)
             .onAppear{
                 onViewDidLoad()
-            }
+            }.tint(.white)
     }
 }
 
