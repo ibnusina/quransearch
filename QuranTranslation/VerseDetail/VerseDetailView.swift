@@ -119,7 +119,7 @@ internal struct VerseDetailView: View {
                             .frame(maxWidth: .infinity, alignment: .trailing)
                             .padding(EdgeInsets(top: 24, leading: 16, bottom: 0, trailing: 16))
                     }
-                }.background(Color.white)
+                }.background(Color(UIColor.systemBackground))
                 HStack(spacing: 20){
                     ZStack {
                         Color(Color.actionTeal.cgColor!)
