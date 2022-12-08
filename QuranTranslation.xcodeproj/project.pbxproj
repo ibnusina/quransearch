@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		16030E2C2941CA8A000B99E5 /* SearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16030E2B2941CA8A000B99E5 /* SearchBar.swift */; };
 		64860069293EFCA000769A73 /* ColorTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64860068293EFCA000769A73 /* ColorTheme.swift */; };
 		6486006B293F2CEA00769A73 /* RoundedCorner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6486006A293F2CEA00769A73 /* RoundedCorner.swift */; };
 		64BC1C382937272000BC88B5 /* quran_id.json in Resources */ = {isa = PBXBuildFile; fileRef = 64BC1C372937272000BC88B5 /* quran_id.json */; };
@@ -24,6 +25,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		16030E2B2941CA8A000B99E5 /* SearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBar.swift; sourceTree = "<group>"; };
 		160AE48F293FB2F100B62527 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		2F94C82C18A226A93C27533B /* Pods_QuranTranslation.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_QuranTranslation.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		64860068293EFCA000769A73 /* ColorTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorTheme.swift; sourceTree = "<group>"; };
@@ -124,6 +126,7 @@
 				64C3BBCF29371C3400DDB491 /* Model */,
 				A93A251428ACFF73008D5673 /* VerseListView.swift */,
 				A965173D28C4B2C800FB660B /* VerseCellView.swift */,
+				16030E2B2941CA8A000B99E5 /* SearchBar.swift */,
 			);
 			path = SearchPage;
 			sourceTree = "<group>";
@@ -276,6 +279,7 @@
 				64C3BBD129371C7000DDB491 /* Language.swift in Sources */,
 				A965173E28C4B2C800FB660B /* VerseCellView.swift in Sources */,
 				64860069293EFCA000769A73 /* ColorTheme.swift in Sources */,
+				16030E2C2941CA8A000B99E5 /* SearchBar.swift in Sources */,
 				A992BD2028BB864D00BE71D5 /* NestedDecodable.swift in Sources */,
 				A93A251328ACFF73008D5673 /* QuranSearchApp.swift in Sources */,
 			);

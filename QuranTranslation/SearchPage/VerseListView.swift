@@ -23,7 +23,7 @@ struct VerseListView: View {
     
     public init() {
         let coloredAppearance = UINavigationBarAppearance()
-        coloredAppearance.configureWithOpaqueBackground()
+        coloredAppearance.configureWithTransparentBackground()
         coloredAppearance.backgroundColor = UIColor(Color.primaryBlue)
 
         coloredAppearance.titleTextAttributes = [.foregroundColor: UIColor.white]
@@ -40,6 +40,11 @@ struct VerseListView: View {
     var body: some View {
         NavigationView {
             VStack(spacing: 0) {
+                SearchBar(text: $searchQuery, onChange: { newValue in
+                    currentPage = 0
+                    verses = searchVerse(newValue, page: currentPage, pageSize: pageSize)
+                }).tint(.gray)
+                Color(Color.primaryBlue.cgColor!).frame(height:8)
                 if verses.count > 0 {
                     ZStack{
                         Text(String(format: "result_count".localized(), searchQuery, totalVerse)).foregroundColor(.white).padding(EdgeInsets(top: 12, leading: 16, bottom: 12, trailing: 16))
@@ -68,7 +73,7 @@ struct VerseListView: View {
                     }
                 }
                 .listStyle(PlainListStyle())
-                .navigationBarTitle("Quran Search")
+                .navigationBarTitle("Quran Search", displayMode: .automatic)
                 .navigationBarItems(
                     trailing: Button(action: {
                         sheetPresented = true
@@ -93,12 +98,8 @@ struct VerseListView: View {
                         }
                     })
                 )
-                .searchable(text: $searchQuery, prompt: "search_in_verse".localized()).onChange(of: searchQuery) { newValue in
-                    currentPage = 0
-                    verses = searchVerse(newValue, page: currentPage, pageSize: pageSize)
-                }
                 
-                NavigationLink("", isActive: $tapped) {
+                NavigationLink("Custom Title", isActive: $tapped) {
                     VerseDetailView(verseId: selectedVerse.verseNumber, chapterId: selectedVerse.chapterNumber, keyword: searchQuery)
                 }.hidden().frame(width: 0, height: 0, alignment: .bottomLeading)
             }
