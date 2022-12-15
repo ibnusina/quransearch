@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "A93A250E28ACFF73008D5673"
-               BuildableName = "QuranTranslation.app"
-               BlueprintName = "QuranTranslation"
-               ReferencedContainer = "container:QuranTranslation.xcodeproj">
+               BuildableName = "Al-Quran Search.app"
+               BlueprintName = "QuranSearch"
+               ReferencedContainer = "container:QuranSearch.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -34,7 +34,6 @@
       buildConfiguration = "Debug"
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
-      language = "id"
       launchStyle = "0"
       useCustomWorkingDirectory = "NO"
       ignoresPersistentStateOnLaunch = "NO"
@@ -46,9 +45,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "A93A250E28ACFF73008D5673"
-            BuildableName = "QuranTranslation.app"
-            BlueprintName = "QuranTranslation"
-            ReferencedContainer = "container:QuranTranslation.xcodeproj">
+            BuildableName = "Al-Quran Search.app"
+            BlueprintName = "QuranSearch"
+            ReferencedContainer = "container:QuranSearch.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </LaunchAction>
@@ -63,9 +62,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "A93A250E28ACFF73008D5673"
-            BuildableName = "QuranTranslation.app"
-            BlueprintName = "QuranTranslation"
-            ReferencedContainer = "container:QuranTranslation.xcodeproj">
+            BuildableName = "Al-Quran Search.app"
+            BlueprintName = "QuranSearch"
+            ReferencedContainer = "container:QuranSearch.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>
