@@ -21,21 +21,6 @@ struct VerseListView: View {
     let languages = translationLanguages
     let pageSize = 10
     
-    public init() {
-        let coloredAppearance = UINavigationBarAppearance()
-        coloredAppearance.configureWithTransparentBackground()
-        coloredAppearance.backgroundColor = UIColor(Color.primaryBlue)
-
-        coloredAppearance.titleTextAttributes = [.foregroundColor: UIColor.white]
-        coloredAppearance.largeTitleTextAttributes = [.foregroundColor: UIColor.white]
-
-        UINavigationBar.appearance().standardAppearance = coloredAppearance
-        UINavigationBar.appearance().compactAppearance = coloredAppearance
-        UINavigationBar.appearance().scrollEdgeAppearance = coloredAppearance
-        
-        UITextField.appearance(whenContainedInInstancesOf: [UISearchBar.self]).backgroundColor = .white
-    }
-    
     var body: some View {
         NavigationView {
             VStack(spacing: 0) {
