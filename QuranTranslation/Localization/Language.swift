@@ -34,9 +34,13 @@ internal func loadLanguage(_ language: LanguageDirectory? = nil) {
     let chapters = Bundle.main.decode([Chapter].self, from: newLanguage.file, keyPath: nil)
     
     try! localRealm.write {
-        localRealm.deleteAll()
+        localRealm.delete(localRealm.objects(Chapter.self))
+        localRealm.delete(localRealm.objects(Verse.self))
+    }
+    try! localRealm.write {
         localRealm.add(chapters)
     }
+    
     
     UserDefaults.setLanguage(newLanguage)
 }
