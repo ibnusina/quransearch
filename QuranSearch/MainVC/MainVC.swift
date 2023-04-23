@@ -42,7 +42,7 @@ class MainVC: UITabBarController {
         searchVC.tabBarItem.title = "Search"
         searchVC.tabBarItem.image = UIImage(systemName: "magnifyingglass.circle")
         
-        let bookmarkVC = UIViewController()
+        let bookmarkVC = BookmarkListVC()
         bookmarkVC.view.backgroundColor = .red
         bookmarkVC.tabBarItem.title = "Bookmark"
         bookmarkVC.tabBarItem.image = UIImage(systemName: "bookmark.circle")
