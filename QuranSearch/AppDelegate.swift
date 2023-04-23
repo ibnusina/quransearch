@@ -9,7 +9,7 @@ import UIKit
 import UIKit
 import RealmSwift
 
-let localRealm = try! Realm(configuration: Realm.Configuration(readOnly: false, schemaVersion: 4, migrationBlock: { migration, oldSchemaVersion in }, deleteRealmIfMigrationNeeded: true))
+let localRealm = try! Realm(configuration: Realm.Configuration(readOnly: false, schemaVersion: 5, migrationBlock: { migration, oldSchemaVersion in }, deleteRealmIfMigrationNeeded: true))
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {

@@ -17,17 +17,26 @@ internal struct VerseDetailView: View {
 
     @State var viewDidLoad: Bool = false
     
+    @State var bookmarked: Bool = false
+    
+    private func getIsBookmarked() -> Bool {
+        return localRealm.objects(Bookmark.self).first {
+            return $0.verseId == verseId && $0.chapterId == chapterId
+        } != nil
+    }
+    
     
     internal init(verseId: Int, chapterId: Int, keyword: String) {
         self.verseId = verseId
         self.chapterId = chapterId
         self.keyword = keyword
+        self.bookmarked = getIsBookmarked()
     }
     
     private func onViewDidLoad() {
         guard !viewDidLoad else { return }
         viewDidLoad = true
-        
+        bookmarked = getIsBookmarked()
         updateView()
     }
     
@@ -146,6 +155,42 @@ internal struct VerseDetailView: View {
             .onAppear{
                 onViewDidLoad()
             }.tint(.white)
+            .toolbar {
+                ToolbarItem(placement: .navigationBarTrailing) {
+                    
+                    Button(action: {
+                        try! localRealm.write {
+                            if bookmarked {
+                                let objects = localRealm.objects(Bookmark.self).filter("verseId == \(verseId) and chapterId == \(chapterId)")
+                                localRealm.delete(objects)
+                                bookmarked = false
+                            } else {
+                                localRealm.add(Bookmark(chapterId: chapterId, verseId: verseId))
+                                bookmarked = true
+                            }
+                        }
+                    }) {
+                        if bookmarked {
+                            Image(systemName: "bookmark.fill")
+                                .imageScale(.large)
+                        } else {
+                            Image(systemName: "bookmark")
+                                .imageScale(.large)
+                        }
+                    }
+                    
+//                    Menu(content: {}, label: {
+//                        if bookmarked {
+//                            Image(systemName: "bookmark")
+//                                .imageScale(.medium)
+//                        } else {
+//                            Image(systemName: "bookmark")
+//                                .imageScale(.medium)
+//                        }
+//
+//                    })
+                }
+            }
     }
 }
 

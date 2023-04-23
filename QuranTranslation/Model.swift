@@ -71,6 +71,18 @@ public class Verse: Object, Decodable {
     }
 }
 
+public class Bookmark: Object {
+    @objc dynamic var _id: ObjectId = ObjectId.generate()
+    @objc dynamic var chapterId: Int = 0
+    @objc dynamic var verseId: Int = 0
+    
+    public convenience init(chapterId: Int, verseId: Int) {
+        self.init()
+        self.chapterId = chapterId
+        self.verseId = verseId
+    }
+}
+
 extension Bundle {
     func decode<T: Decodable>(_ type: T.Type, from file: String, keyPath: String?, dateDecodingStrategy: JSONDecoder.DateDecodingStrategy = .deferredToDate, keyDecodingStrategy: JSONDecoder.KeyDecodingStrategy = .useDefaultKeys) -> T {
         guard let url = self.url(forResource: file, withExtension: nil) else {
