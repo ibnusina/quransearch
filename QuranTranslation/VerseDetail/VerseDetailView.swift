@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import Introspect
 
 internal struct VerseDetailView: View {
     @State var verseDetail: VerseDetail = VerseDetail()
@@ -18,6 +19,7 @@ internal struct VerseDetailView: View {
     @State var viewDidLoad: Bool = false
     
     @State var bookmarked: Bool = false
+    @State var uiTabarController: UITabBarController?
     
     private func getIsBookmarked() -> Bool {
         return localRealm.objects(Bookmark.self).first {
@@ -148,7 +150,7 @@ internal struct VerseDetailView: View {
                         }
                     }.cornerRadius(8, corners: [.topLeft, .bottomLeft]).opacity(nextTitle == "" ? 0 : 1)
                     
-                }.frame(maxWidth:.infinity, idealHeight: 40, maxHeight: 40).padding(.bottom, 12)
+                }.frame(maxWidth:.infinity, idealHeight: 40, maxHeight: 40).padding(.bottom, -40)
             }.background(Color.secondaryBlue)
         }.navigationTitle("\("chapter".localized()) \(verseDetail.chapterNumber): \(verseDetail.chapterName)")
             .navigationBarTitleDisplayMode(.inline)
@@ -180,6 +182,12 @@ internal struct VerseDetailView: View {
                     }
                 }
             }
+            .introspectTabBarController { (UITabBarController) in
+                        UITabBarController.tabBar.isHidden = true
+                        uiTabarController = UITabBarController
+                    }.onDisappear{
+                        uiTabarController?.tabBar.isHidden = false
+                    }
     }
 }
 
@@ -208,11 +216,5 @@ internal struct VerseDetail {
         self.verseNumber = verseNumber
         self.verseArabic = verseArabic
         self.verseTranslation = verseTranslation
-    }
-}
-
-struct AyahDetailView_Previews: PreviewProvider {
-    static var previews: some View {
-        VerseDetailView(verseId: 1, chapterId: 1, keyword: "abc")
     }
 }
