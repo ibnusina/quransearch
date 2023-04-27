@@ -11,6 +11,8 @@ Podfile.lock
 *~.nib
 DerivedData/
 build/
+*.ipa
+*.dSym*
 
 *.pbxuser
 *.mode1v3
@@ -24,3 +26,5 @@ project.xcworkspace/xcuserdata/
 UserInterfaceState.xcuserstate
 xcdebugger/
 *.moved-aside
+fastlane/report.xml
+fastlane/README.md

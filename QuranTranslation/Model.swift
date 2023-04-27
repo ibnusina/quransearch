@@ -9,7 +9,11 @@ import Realm
 import RealmSwift
 import Foundation
 
-public class Chapter: Object, Decodable {
+public class Chapter: Object, Decodable, Identifiable {
+    public var id: String {
+        "\(chapterId)"
+    }
+    
     @objc dynamic var _id: ObjectId = ObjectId.generate()
     @objc dynamic var chapterId: Int = 0
     @objc dynamic var name: String = ""
@@ -46,7 +50,11 @@ public class Chapter: Object, Decodable {
     }
 }
 
-public class Verse: Object, Decodable {
+public class Verse: Object, Decodable, Identifiable {
+    public var id: String {
+        "\(_id.description)"
+    }
+    
     @objc dynamic var _id: ObjectId = ObjectId.generate()
     @objc dynamic var verseId: Int = 0
     @objc dynamic var text: String = ""

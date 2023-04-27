@@ -13,3 +13,5 @@
 "choose_language" = "Choose Language";
 "result_count" = "\"%@\" is found in %d verses";
 "search_in_verse" = "Search in verse";
+"bookmark" = "Bookmark";
+"verses" = "verses";

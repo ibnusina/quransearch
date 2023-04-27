@@ -178,17 +178,6 @@ internal struct VerseDetailView: View {
                                 .imageScale(.large)
                         }
                     }
-                    
-//                    Menu(content: {}, label: {
-//                        if bookmarked {
-//                            Image(systemName: "bookmark")
-//                                .imageScale(.medium)
-//                        } else {
-//                            Image(systemName: "bookmark")
-//                                .imageScale(.medium)
-//                        }
-//
-//                    })
                 }
             }
     }

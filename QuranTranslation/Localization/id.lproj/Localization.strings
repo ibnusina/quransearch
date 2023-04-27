@@ -13,3 +13,5 @@
 "choose_language" = "Pilih Bahasa";
 "result_count" = "Kata \"%@\" ditemukan dalam %d ayat";
 "search_in_verse" = "Cari dalam ayat";
+"bookmark" = "Penanda";
+"verses" = "ayat-ayat";
