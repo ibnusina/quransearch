@@ -150,7 +150,7 @@ internal struct VerseDetailView: View {
                         }
                     }.cornerRadius(8, corners: [.topLeft, .bottomLeft]).opacity(nextTitle == "" ? 0 : 1)
                     
-                }.frame(maxWidth:.infinity, idealHeight: 40, maxHeight: 40).padding(.bottom, -40)
+                }.frame(maxWidth:.infinity, idealHeight: 40, maxHeight: 40).padding(.bottom, -28)
             }.background(Color.secondaryBlue)
         }.navigationTitle("\("chapter".localized()) \(verseDetail.chapterNumber): \(verseDetail.chapterName)")
             .navigationBarTitleDisplayMode(.inline)
