@@ -48,6 +48,7 @@
 		1609538529E68DB400F87522 /* SearchBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchBar.swift; sourceTree = "<group>"; };
 		1609538629E68DB400F87522 /* SearchVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SearchVC.swift; path = QuranTranslation/SearchPage/SearchVC.swift; sourceTree = SOURCE_ROOT; };
 		1609538829E68DB400F87522 /* VerseDetailView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VerseDetailView.swift; sourceTree = "<group>"; };
+		16438E5729FAB831001F5B96 /* QuranSearch.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = QuranSearch.entitlements; sourceTree = "<group>"; };
 		1643B29829F634ED00C10B3C /* ChapterListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChapterListVC.swift; sourceTree = "<group>"; };
 		1643B29A29F6352900C10B3C /* ChapterListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChapterListView.swift; sourceTree = "<group>"; };
 		1643EFD029E5684A005602D3 /* QuranSearch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QuranSearch.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -148,6 +149,7 @@
 		1643EFD229E5684A005602D3 /* QuranSearch */ = {
 			isa = PBXGroup;
 			children = (
+				16438E5729FAB831001F5B96 /* QuranSearch.entitlements */,
 				1643B29729F634D300C10B3C /* ChapterList */,
 				1698955929F57578009114D6 /* Bookmark */,
 				16CF5FBD29E9B2D100B3AD22 /* MainVC */,
@@ -485,9 +487,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = QuranSearch/QuranSearch.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 4;
-				DEVELOPMENT_TEAM = 2S5AR6B46T;
+				CURRENT_PROJECT_VERSION = 5;
+				DEVELOPMENT_TEAM = C39XVMFQ52;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = QuranSearch/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -514,9 +517,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = QuranSearch/QuranSearch.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 4;
-				DEVELOPMENT_TEAM = 2S5AR6B46T;
+				CURRENT_PROJECT_VERSION = 5;
+				DEVELOPMENT_TEAM = C39XVMFQ52;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = QuranSearch/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
