@@ -6,7 +6,6 @@
 //
 
 import SwiftUI
-import Introspect
 
 internal struct VerseDetailView: View {
     @State var verseDetail: VerseDetail = VerseDetail()
@@ -150,7 +149,7 @@ internal struct VerseDetailView: View {
                         }
                     }.cornerRadius(8, corners: [.topLeft, .bottomLeft]).opacity(nextTitle == "" ? 0 : 1)
                     
-                }.frame(maxWidth:.infinity, idealHeight: 40, maxHeight: 40).padding(.bottom, -28)
+                }.frame(maxWidth:.infinity, idealHeight: 40, maxHeight: 40).padding(.bottom, 12)
             }.background(Color.secondaryBlue)
         }.navigationTitle("\("chapter".localized()) \(verseDetail.chapterNumber): \(verseDetail.chapterName)")
             .navigationBarTitleDisplayMode(.inline)
@@ -182,12 +181,6 @@ internal struct VerseDetailView: View {
                     }
                 }
             }
-            .introspectTabBarController { (UITabBarController) in
-                        UITabBarController.tabBar.isHidden = true
-                        uiTabarController = UITabBarController
-                    }.onDisappear{
-                        uiTabarController?.tabBar.isHidden = false
-                    }
     }
 }
 
