@@ -51,7 +51,7 @@
 		16438E5729FAB831001F5B96 /* QuranSearch.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = QuranSearch.entitlements; sourceTree = "<group>"; };
 		1643B29829F634ED00C10B3C /* ChapterListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChapterListVC.swift; sourceTree = "<group>"; };
 		1643B29A29F6352900C10B3C /* ChapterListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChapterListView.swift; sourceTree = "<group>"; };
-		1643EFD029E5684A005602D3 /* QuranSearch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QuranSearch.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		1643EFD029E5684A005602D3 /* Quran Search.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Quran Search.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1643EFD329E5684A005602D3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1643EFD529E5684A005602D3 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		1643EFD729E5684A005602D3 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -141,7 +141,7 @@
 		1643EFD129E5684A005602D3 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				1643EFD029E5684A005602D3 /* QuranSearch.app */,
+				1643EFD029E5684A005602D3 /* Quran Search.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -224,7 +224,7 @@
 			);
 			name = QuranSearch;
 			productName = QuranSearch;
-			productReference = 1643EFD029E5684A005602D3 /* QuranSearch.app */;
+			productReference = 1643EFD029E5684A005602D3 /* Quran Search.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -421,6 +421,7 @@
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "Quran Search";
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -474,6 +475,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "Quran Search";
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
@@ -489,7 +491,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = QuranSearch/QuranSearch.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 8;
+				CURRENT_PROJECT_VERSION = 12;
 				DEVELOPMENT_TEAM = C39XVMFQ52;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = QuranSearch/Info.plist;
@@ -504,15 +506,15 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 2.0.0;
+				MARKETING_VERSION = 2.0.1;
 				PRODUCT_BUNDLE_IDENTIFIER = sina.QuranTranslation;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Quran Search";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
-				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = YES;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -524,7 +526,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = QuranSearch/QuranSearch.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 8;
+				CURRENT_PROJECT_VERSION = 12;
 				DEVELOPMENT_TEAM = C39XVMFQ52;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = QuranSearch/Info.plist;
@@ -539,15 +541,15 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 2.0.0;
+				MARKETING_VERSION = 2.0.1;
 				PRODUCT_BUNDLE_IDENTIFIER = sina.QuranTranslation;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Quran Search";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
-				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = YES;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

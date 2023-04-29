@@ -39,15 +39,15 @@ class MainVC: UITabBarController {
         super.viewDidLoad()
         
         let searchVC = SearchVC()
-        searchVC.tabBarItem.title = "search".localized()
+        searchVC.tabBarItem.title = "search".localized().capitalized
         searchVC.tabBarItem.image = UIImage(systemName: "magnifyingglass.circle")
         
         let bookmarkVC = BookmarkListVC()
-        bookmarkVC.tabBarItem.title = "bookmark".localized()
+        bookmarkVC.tabBarItem.title = "bookmark".localized().capitalized
         bookmarkVC.tabBarItem.image = UIImage(systemName: "bookmark.circle")
         
         let chapterVC = ChapterListVC()
-        chapterVC.tabBarItem.title = "chapter".localized()
+        chapterVC.tabBarItem.title = "chapter".localized().capitalized
         chapterVC.tabBarItem.image = UIImage(systemName: "book.circle")
         
         self.viewControllers = [searchVC, bookmarkVC, chapterVC]
