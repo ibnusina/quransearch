@@ -17,6 +17,25 @@ workflows:
         APP_ID: 1659904084
       xcode: latest
       cocoapods: default
+    triggering:
+      events:                       # List the events that trigger builds
+        - push
+        - pull_request
+        - tag
+      branch_patterns:              # Include or exclude watched branches
+        - pattern: 'main'
+          include: true
+          source: true
+        - pattern: '*release*'
+          include: true
+          source: true
+        - pattern: '*hotfix*'
+          include: true
+          source: true
+      tag_patterns:                 # Include or exclude watched tag labels
+        - pattern: '*'
+          include: true
+      cancel_previous_builds: false  # Set to `true` to automatically cancel outdated webhook builds
     scripts:
       - name: Install CocoaPods dependencies
         script: | 
@@ -49,22 +68,3 @@ workflows:
         auth: integration
         submit_to_testflight: true
         submit_to_app_store: false
-triggering:
-  events:                       # List the events that trigger builds
-    - push
-    - pull_request
-    - tag
-  branch_patterns:              # Include or exclude watched branches
-    - pattern: 'main'
-      include: true
-      source: true
-    - pattern: '*release*'
-      include: true
-      source: true
-    - pattern: '*hotfix*'
-      include: true
-      source: true
-  tag_patterns:                 # Include or exclude watched tag labels
-    - pattern: '*'
-      include: true
-  cancel_previous_builds: false  # Set to `true` to automatically cancel outdated webhook builds
