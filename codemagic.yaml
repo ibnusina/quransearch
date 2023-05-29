@@ -4,7 +4,7 @@ workflows:
     max_build_duration: 120
     instance_type: mac_mini_m1
     integrations:
-      app_store_connect: "Code Magic"
+      app_store_connect: "Code Magic" 
     environment:
       ios_signing:
         distribution_type: app_store
@@ -13,6 +13,7 @@ workflows:
         BUNDLE_ID: "sina.QuranTranslation"
         XCODE_WORKSPACE: "QuranSearch.xcworkspace"
         XCODE_SCHEME: "QuranSearch"
+        XCODE_PROJECT: "QuranSearch"
         APP_ID: 1659904084
       xcode: latest
       cocoapods: default
@@ -48,3 +49,22 @@ workflows:
         auth: integration
         submit_to_testflight: true
         submit_to_app_store: false
+triggering:
+  events:                       # List the events that trigger builds
+    - push
+    - pull_request
+    - tag
+  branch_patterns:              # Include or exclude watched branches
+    - pattern: 'main'
+      include: true
+      source: true
+    - pattern: '*release*'
+      include: true
+      source: true
+    - pattern: '*hotfix*'
+      include: true
+      source: true
+  tag_patterns:                 # Include or exclude watched tag labels
+    - pattern: '*'
+      include: true
+  cancel_previous_builds: false  # Set to `true` to automatically cancel outdated webhook builds
