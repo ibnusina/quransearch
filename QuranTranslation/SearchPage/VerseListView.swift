@@ -63,7 +63,7 @@ struct VerseListView: View {
                 currentPage = 0
                 verses = searchVerse(newValue, page: currentPage, pageSize: pageSize)
             }
-            .navigationBarTitle("Quran Search", displayMode: .automatic)
+            .navigationBarTitle("search_verses".localized(), displayMode: .automatic)
             .navigationBarItems(
                 trailing: Button(action: {
                     sheetPresented = true
