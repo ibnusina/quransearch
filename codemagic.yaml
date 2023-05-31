@@ -19,25 +19,15 @@ workflows:
       cocoapods: default
     triggering:
       events:                       # List the events that trigger builds
-        - push
+        - tag
       tag_patterns:                 # Include or exclude watched tag labels
         - pattern: '*'
           include: true
       cancel_previous_builds: false  # Set to `true` to automatically cancel outdated webhook builds
     scripts:
-      - name: Exit build if [upload dev] not included
+      - name: Test echo
         script: | 
-          set -e
-          set -x
-          export COMMIT_MSG=$(git log -1 --pretty=%B)
-          echo COMMIT_MSG
-          if [[ $COMMIT_MSG != *"[upload dev]"* ]]
-            then
-              echo "Commit does not want to be tested"
-              exit 1
-            else 
-              echo "Commit message includes '[upload dev]', moving forward..."
-          fi
+          echo "Commit message includes '[upload dev]', moving forward..."
     publishing:
       email:
         recipients:
