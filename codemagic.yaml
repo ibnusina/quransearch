@@ -3,11 +3,11 @@ workflows:
     name: iOS Native
     max_build_duration: 120
     instance_type: mac_mini_m1
-    integrations:
-      app_store_connect: "Code Magic" 
     environment:
+      groups:
+        - adhoc_build
       ios_signing:
-        distribution_type: app_store
+        distribution_type: adhoc
         bundle_identifier: sina.QuranTranslation
       vars:
         BUNDLE_ID: "sina.QuranTranslation"
@@ -25,17 +25,31 @@ workflows:
           include: true
       cancel_previous_builds: false  # Set to `true` to automatically cancel outdated webhook builds
     scripts:
-      - name: Test echo
+      - name: Install CocoaPods dependencies
         script: | 
-          echo "Commit message includes '[upload dev]', moving forward..."
-    publishing:
-      email:
-        recipients:
-          - sina.hime009@gmail.com
-        notify:
-          success: true
-          failure: false
-      app_store_connect:
-        auth: integration
-        submit_to_testflight: true
-        submit_to_app_store: false
+          pod install
+      - name: Set up provisioning profiles settings on Xcode project
+        script: | 
+          PROFILES_HOME="$HOME/Library/MobileDevice/Provisioning Profiles"
+          mkdir -p "$PROFILES_HOME"
+          for profile in "${!qs_profile_adhoc_@}"; do
+            PROFILE_PATH="$(mktemp "$HOME/Library/MobileDevice/Provisioning Profiles"/ios_$(uuidgen).mobileprovision)"
+            echo ${!profile} | base64 --decode > "$PROFILE_PATH"
+            echo "Saved provisioning profile $PROFILE_PATH"
+          done
+          xcode-project use-profiles
+      - name: Increment build number
+        script: | 
+          cd $CM_BUILD_DIR/Application
+          LATEST_BUILD_NUMBER="$(TZ="Asia/Jakarta" date +%Y.%m.%d.%H.%M)"
+          agvtool new-version -all $LATEST_BUILD_NUMBER
+      - name: Build ipa for distribution
+        script: | 
+          xcode-project build-ipa \
+            --workspace "$CM_BUILD_DIR/$XCODE_WORKSPACE" \
+            --scheme "$XCODE_SCHEME"
+    artifacts:
+      - build/ios/ipa/*.ipa
+      - /tmp/xcodebuild_logs/*.log
+      - $HOME/Library/Developer/Xcode/DerivedData/**/Build/**/*.app
+      - $HOME/Library/Developer/Xcode/DerivedData/**/Build/**/*.dSYM
