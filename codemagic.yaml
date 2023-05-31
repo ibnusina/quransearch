@@ -18,45 +18,24 @@ workflows:
       xcode: latest
       cocoapods: default
     triggering:
-      events:                       # List the events that trigger builds
-        - push
-        - pull_request
-        - tag
-      branch_patterns:              # Include or exclude watched branches
-        - pattern: 'main'
-          include: true
-          source: true
-        - pattern: '*release*'
-          include: true
-          source: true
-        - pattern: '*hotfix*'
-          include: true
-          source: true
       tag_patterns:                 # Include or exclude watched tag labels
         - pattern: '*'
           include: true
       cancel_previous_builds: false  # Set to `true` to automatically cancel outdated webhook builds
     scripts:
-      - name: Install CocoaPods dependencies
+      - name: Exit build if [upload dev] not included
         script: | 
-          pod install
-      - name: Set up provisioning profiles settings on Xcode project
-        script: xcode-project use-profiles
-      - name: Increment build number
-        script: | 
-          cd $CM_BUILD_DIR
-          LATEST_BUILD_NUMBER=$(app-store-connect get-latest-app-store-build-number "$APP_ID")
-          agvtool new-version -all $(($LATEST_BUILD_NUMBER + 1))
-      - name: Build ipa for distribution
-        script: | 
-          xcode-project build-ipa \
-            --workspace "$CM_BUILD_DIR/$XCODE_WORKSPACE" \
-            --scheme "$XCODE_SCHEME"
-    artifacts:
-      - build/ios/ipa/*.ipa
-      - /tmp/xcodebuild_logs/*.log
-      - $HOME/Library/Developer/Xcode/DerivedData/**/Build/**/*.app
-      - $HOME/Library/Developer/Xcode/DerivedData/**/Build/**/*.dSYM
+          set -e
+          set -x
+          export COMMIT_MSG=$(git log -1 --pretty=%B)
+          echo COMMIT_MSG
+          if [[ $COMMIT_MSG != *"[upload dev]"* ]]
+            then
+              echo "Commit does not want to be tested"
+              exit 1
+            else 
+              echo "Commit message includes '[upload dev]', moving forward..."
+          fi
     publishing:
       email:
         recipients:
