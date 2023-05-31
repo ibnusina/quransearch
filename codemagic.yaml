@@ -7,7 +7,7 @@ workflows:
       groups:
         - adhoc_build
       ios_signing:
-        distribution_type: ad_hoc
+        distribution_type: app_store
         bundle_identifier: sina.QuranTranslation
       vars:
         BUNDLE_ID: "sina.QuranTranslation"
