@@ -29,15 +29,7 @@ workflows:
         script: | 
           pod install
       - name: Set up provisioning profiles settings on Xcode project
-        script: | 
-          PROFILES_HOME="$HOME/Library/MobileDevice/Provisioning Profiles"
-          mkdir -p "$PROFILES_HOME"
-          for profile in "${!qs_profile_adhoc_@}"; do
-            PROFILE_PATH="$(mktemp "$HOME/Library/MobileDevice/Provisioning Profiles"/ios_$(uuidgen).mobileprovision)"
-            echo ${!profile} | base64 --decode > "$PROFILE_PATH"
-            echo "Saved provisioning profile $PROFILE_PATH"
-          done
-          xcode-project use-profiles
+        script: xcode-project use-profiles
       - name: Increment build number
         script: | 
           cd $CM_BUILD_DIR/Application
