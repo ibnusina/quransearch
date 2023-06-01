@@ -33,7 +33,7 @@ workflows:
       - name: Increment build number
         script: | 
           cd $CM_BUILD_DIR/Application
-          LATEST_BUILD_NUMBER="$(TZ="Asia/Jakarta" date +%Y.%m.%d.%H.%M)"
+          LATEST_BUILD_NUMBER="$(TZ="Asia/Jakarta" date +%Y.%m.%d.%H.%M).${CM_BRANCH//\//.}"
           agvtool new-version -all $LATEST_BUILD_NUMBER
       - name: Build ipa for distribution
         script: | 
