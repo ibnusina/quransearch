@@ -21,7 +21,7 @@ workflows:
       events:                       # List the events that trigger builds
         - tag
       branch_patterns:
-        - pattherrr
+        - pattherrrr
       tag_patterns:                 # Include or exclude watched tag labels
         - pattern: '*'
           include: true
