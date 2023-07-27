@@ -13,9 +13,7 @@ jobs:
   SwiftLint:
     runs-on: macos-13
     steps:
-      - uses: actions/checkout@v2
-        with:
-          fetch-depth: 2
+      - uses: actions/checkout@v3
       - name: Swiftlint Check
         run: chmod +x .scripts/swiftlint-changes; .scripts/swiftlint-changes --compare ${{ github.head_ref }} ${{ github.base_ref }}
         
