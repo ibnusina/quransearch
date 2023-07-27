@@ -16,7 +16,7 @@ let localRealm = try! Realm(configuration: Realm.Configuration(readOnly: false, 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
-    private var remoteConfig: RemoteConfig!
+    internal var remoteConfig: RemoteConfig!
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         FirebaseApp.configure()
