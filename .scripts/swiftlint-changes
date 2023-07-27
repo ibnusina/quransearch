@@ -1,0 +1,34 @@
+#!/bin/bash
+
+changes=""
+if [[ $1 == --latest ]]; then
+    changes=$(git rev-parse --short HEAD | git show --pretty="" --name-only)
+    echo $changes
+elif [[ $1 == --diff ]]; then
+    changes=$(git diff --name-only)
+    echo $changes
+elif [[ $1 == --compare && ! -z $2 && ! -z $3 ]]; then
+    changes=$(git --no-pager diff --name-only $2 $(git merge-base $2 $3))
+    echo $changes
+else
+    echo "use either option --latest or --diff"
+    exit 1
+fi
+
+git_parent=$(git rev-parse --show-toplevel)
+chmod +x $git_parent/.scripts/swiftlint
+
+errors=""
+while read file_path; do
+    relative_path=./$file_path
+    git_parent=$(git rev-parse --show-toplevel)
+    fullpath=$git_parent/$relative_path
+    if [[ -f $fullpath && $fullpath != *Test* ]]; then
+        violation=$($git_parent/.scripts/swiftlint $fullpath)
+        errors+="$(echo $violation | grep error)"
+    fi
+done <<<$(echo $changes | grep "\.swift")
+if [[ ! -z $errors ]]; then
+    echo $errors
+    exit 1
+fi
