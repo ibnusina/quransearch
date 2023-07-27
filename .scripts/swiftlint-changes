@@ -46,7 +46,7 @@ function convertToGitHubActionsLoggingCommands() {
     sed -E 's/^(.*):([0-9]+):([0-9]+): (warning|error|[^:]+): (.*)/::\4 file=\1,line=\2,col=\3::\5/'
 }
 
-changedFiles=$(git --no-pager diff --name-only --relative $2 $(git merge-base $2 $3) -- '*.swift')
+changedFiles=$(git --no-pager diff --name-only --relative $1 $(git merge-base $1 $2) -- '*.swift')
 
 if [ -z "$changedFiles" ]
 then
