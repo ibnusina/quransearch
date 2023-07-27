@@ -12,7 +12,7 @@ elif [[ $1 == --diff ]]; then
     echo $changes
 elif [[ $1 == --compare && ! -z $2 && ! -z $3 ]]; then
     echo "masup 8"
-    changes=$(git --no-pager diff --name-only $2 $(git merge-base $2 $3))
+    changes=$(git --no-pager diff --name-only origin/$2 $(git merge-base origin/$2 origin/$3))
     echo $changes
 else
     echo "use either option --latest or --diff"
