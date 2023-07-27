@@ -1,13 +1,17 @@
 #!/bin/bash
 
+echo "masup 5"
 changes=""
 if [[ $1 == --latest ]]; then
+    echo "masup 6"
     changes=$(git rev-parse --short HEAD | git show --pretty="" --name-only)
     echo $changes
 elif [[ $1 == --diff ]]; then
+    echo "masup 7"
     changes=$(git diff --name-only)
     echo $changes
 elif [[ $1 == --compare && ! -z $2 && ! -z $3 ]]; then
+    echo "masup 8"
     changes=$(git --no-pager diff --name-only $2 $(git merge-base $2 $3))
     echo $changes
 else
