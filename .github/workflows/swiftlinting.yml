@@ -17,5 +17,5 @@ jobs:
         with:
           fetch-depth: 0
       - name: Swiftlint Check
-        run: chmod +x .scripts/swiftlint-changes; .scripts/swiftlint-changes --compare ${{ github.head_ref }} ${{ github.base_ref }}
+        run: chmod +x .scripts/swiftlint-changes; .scripts/swiftlint-changes --compare ${{ github.head_ref.sha }} ${{ github.base_ref.sha }}
         
