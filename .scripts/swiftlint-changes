@@ -1,38 +1,57 @@
 #!/bin/bash
 
-echo "masup 5"
-changes=""
-if [[ $1 == --latest ]]; then
-    echo "masup 6"
-    changes=$(git rev-parse --short HEAD | git show --pretty="" --name-only)
-    echo $changes
-elif [[ $1 == --diff ]]; then
-    echo "masup 7"
-    changes=$(git diff --name-only)
-    echo $changes
-elif [[ $1 == --compare && ! -z $2 && ! -z $3 ]]; then
-    echo "masup 8"
-    changes=$(git --no-pager diff --name-only $2 $(git merge-base $2 $3))
-    echo $changes
-else
-    echo "use either option --latest or --diff"
-    exit 1
+# echo "masup 5"
+# changes=""
+# if [[ $1 == --latest ]]; then
+#     echo "masup 6"
+#     changes=$(git rev-parse --short HEAD | git show --pretty="" --name-only)
+#     echo $changes
+# elif [[ $1 == --diff ]]; then
+#     echo "masup 7"
+#     changes=$(git diff --name-only)
+#     echo $changes
+# elif [[ $1 == --compare && ! -z $2 && ! -z $3 ]]; then
+#     echo "masup 8"
+#     changes=$(git --no-pager diff --name-only $2 $(git merge-base $2 $3))
+#     echo $changes
+# else
+#     echo "use either option --latest or --diff"
+#     exit 1
+# fi
+
+# git_parent=$(git rev-parse --show-toplevel)
+# chmod +x $git_parent/.scripts/swiftlint
+
+# errors=""
+# while read file_path; do
+#     relative_path=./$file_path
+#     git_parent=$(git rev-parse --show-toplevel)
+#     fullpath=$git_parent/$relative_path
+#     if [[ -f $fullpath && $fullpath != *Test* ]]; then
+#         violation=$($git_parent/.scripts/swiftlint $fullpath)
+#         errors+="$(echo $violation | grep error)"
+#     fi
+# done <<<$(echo $changes | grep "\.swift")
+# if [[ ! -z $errors ]]; then
+#     echo $errors
+#     exit 1
+# fi
+
+
+function stripPWD() {
+    sed -E "s/$(pwd|sed 's/\//\\\//g')\///"
+}
+
+function convertToGitHubActionsLoggingCommands() {
+    sed -E 's/^(.*):([0-9]+):([0-9]+): (warning|error|[^:]+): (.*)/::\4 file=\1,line=\2,col=\3::\5/'
+}
+
+changedFiles=$(git --no-pager diff --name-only --relative $2 $(git merge-base $2 $3) -- '*.swift')
+
+if [ -z "$changedFiles" ]
+then
+    echo "No Swift file changed"
+    exit
 fi
 
-git_parent=$(git rev-parse --show-toplevel)
-chmod +x $git_parent/.scripts/swiftlint
-
-errors=""
-while read file_path; do
-    relative_path=./$file_path
-    git_parent=$(git rev-parse --show-toplevel)
-    fullpath=$git_parent/$relative_path
-    if [[ -f $fullpath && $fullpath != *Test* ]]; then
-        violation=$($git_parent/.scripts/swiftlint $fullpath)
-        errors+="$(echo $violation | grep error)"
-    fi
-done <<<$(echo $changes | grep "\.swift")
-if [[ ! -z $errors ]]; then
-    echo $errors
-    exit 1
-fi
+set -o pipefail && swiftlint "$@" -- $changedFiles | stripPWD | convertToGitHubActionsLoggingCommands
