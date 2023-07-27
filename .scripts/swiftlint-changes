@@ -18,6 +18,6 @@ fi
 
 errors=$(swiftlint "$@" -- $changedFiles | grep error | stripPWD | convertToGitHubActionsLoggingCommands)
 if [[ ! -z $errors ]]; then
-    set -o pipefail && echo $errors
+    set -o pipefail && echo "$errors"
     exit 1
 fi
