@@ -15,5 +15,5 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - name: Swiftlint Check
-        run: chmod +x .scripts/swiftlint-changes; .scripts/swiftlint-changes --compare ${{ github.head_ref }} ${{ github.base_ref }}
+        run: echo $(git branch); chmod +x .scripts/swiftlint-changes; .scripts/swiftlint-changes --compare ${{ github.head_ref }} ${{ github.base_ref }}
         
