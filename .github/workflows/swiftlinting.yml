@@ -6,13 +6,16 @@ on:
       - '.github/workflows/swiftlinting.yml'
       - '.swiftlint.yml'
       - '**/*.swift'
+      - '.scripts/swiftlint'
+      - '.scripts/swiftlint-changes'
 
 jobs:
   SwiftLint:
-    runs-on: ubuntu-latest
+    runs-on: macos-13
     steps:
-      - uses: actions/checkout@v1
-      - name: GitHub Action for SwiftLint (Only files changed in the PR)
-        uses: norio-nomura/action-swiftlint@3.2.1
-        env:
-          DIFF_BASE: ${{ github.base_ref }}
+      - uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+      - name: Swiftlint Check
+        run: chmod +x .scripts/swiftlint-changes.sh; .scripts/swiftlint-changes.sh origin/${{ github.head_ref }} origin/${{ github.base_ref }}
+        
