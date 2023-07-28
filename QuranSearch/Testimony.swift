@@ -1,6 +1,6 @@
 
 import Foundation
 
-class AAAAAA {
+internal class AAAAAA {
     
 }
