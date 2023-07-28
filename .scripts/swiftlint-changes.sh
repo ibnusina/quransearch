@@ -12,22 +12,8 @@ then
     exit
 fi
 
-errors=""
-while read file; do
-    if [[ -f $file ]]; then
-        error="$(swiftlint $file | grep error | convertToGitHubActionsLoggingCommands)"
-        errors+="$error"
-    fi
-done <<<$(echo "$changedFiles")
-
+errors=$(swiftlint "$@" -- $changedFiles | grep error | convertToGitHubActionsLoggingCommands)
 if [[ ! -z $errors ]]; then
     set -o pipefail && echo "$errors"
     exit 1
 fi
-
-
-# errors=$(swiftlint "$@" -- $changedFiles | grep error | convertToGitHubActionsLoggingCommands)
-# if [[ ! -z $errors ]]; then
-#     set -o pipefail && echo "$errors"
-#     exit 1
-# fi
