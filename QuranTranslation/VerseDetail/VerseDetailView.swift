@@ -14,7 +14,7 @@ internal struct VerseDetailView: View {
     let keyword: String
     @State private var prevTitle: String = ""
     @State private var nextTitle: String = ""
-
+    
     @State var viewDidLoad: Bool = false
     
     @State var bookmarked: Bool = false
@@ -64,7 +64,7 @@ internal struct VerseDetailView: View {
             } else {
                 prevTitle = ""
             }
-
+            
             if verseId == lastVerseId && chapterId != lastChapterId {
                 nextTitle = "\("to_chapter".localized()) \(chapterId + 1) →"
             } else if verseId < lastVerseId {
@@ -125,6 +125,7 @@ internal struct VerseDetailView: View {
                             .frame(maxWidth: .infinity, alignment: .leading)
                             .padding(EdgeInsets(top: 12, leading: 16, bottom: 0, trailing: 16))
                         Text(verseDetail.verseArabic)
+                            .font(Font.custom("Amiri-Regular", size: 24))
                             .multilineTextAlignment(.trailing)
                             .frame(maxWidth: .infinity, alignment: .trailing)
                             .padding(EdgeInsets(top: 24, leading: 16, bottom: 0, trailing: 16))
