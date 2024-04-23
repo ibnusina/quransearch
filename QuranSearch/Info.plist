@@ -4,6 +4,8 @@
 <dict>
 	<key>UIAppFonts</key>
 	<array>
+		<string>me_quran.ttf</string>
+		<string>shaikh_hamdullah_mushaf.ttf</string>
 		<string>Amiri-Regular.ttf</string>
 	</array>
 	<key>ITSAppUsesNonExemptEncryption</key>

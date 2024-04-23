@@ -27,11 +27,13 @@
 		1643EFD829E5684A005602D3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1643EFD729E5684A005602D3 /* ViewController.swift */; };
 		1643EFDD29E5684B005602D3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1643EFDC29E5684B005602D3 /* Assets.xcassets */; };
 		1643EFE029E5684B005602D3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1643EFDE29E5684B005602D3 /* LaunchScreen.storyboard */; };
-		164FCA6C2B7FB8FC003BDB8E /* Amiri-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 164FCA6B2B7FB8FC003BDB8E /* Amiri-Regular.ttf */; };
 		1691DB902A0C9E6F0027A106 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1691DB8F2A0C9E6F0027A106 /* GoogleService-Info.plist */; };
 		1691DB922A0CA6A60027A106 /* remote_config_defaults.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1691DB912A0CA6A60027A106 /* remote_config_defaults.plist */; };
 		1698955B29F57591009114D6 /* BookmarkListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1698955A29F57591009114D6 /* BookmarkListView.swift */; };
 		1698955D29F5775A009114D6 /* BookmarkListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1698955C29F5775A009114D6 /* BookmarkListVC.swift */; };
+		16AFDCFD2BD7692B00CD2DE6 /* shaikh_hamdullah_mushaf.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 16AFDCF82BD7692A00CD2DE6 /* shaikh_hamdullah_mushaf.ttf */; };
+		16AFDD022BD771DA00CD2DE6 /* quran.realm in Resources */ = {isa = PBXBuildFile; fileRef = 16AFDD012BD771DA00CD2DE6 /* quran.realm */; };
+		16AFDD042BD772EB00CD2DE6 /* quranRealm-model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16AFDD032BD772EB00CD2DE6 /* quranRealm-model.swift */; };
 		16CF5FBF29E9B31E00B3AD22 /* MainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16CF5FBE29E9B31E00B3AD22 /* MainVC.swift */; };
 		64C363998B8BDDF21C18C0E9 /* Pods_QuranSearch.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1FCDE878F64A783CDF2B28D1 /* Pods_QuranSearch.framework */; };
 /* End PBXBuildFile section */
@@ -61,11 +63,13 @@
 		1643EFDC29E5684B005602D3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1643EFDF29E5684B005602D3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1643EFE129E5684B005602D3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		164FCA6B2B7FB8FC003BDB8E /* Amiri-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Amiri-Regular.ttf"; sourceTree = "<group>"; };
 		1691DB8F2A0C9E6F0027A106 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		1691DB912A0CA6A60027A106 /* remote_config_defaults.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = remote_config_defaults.plist; sourceTree = "<group>"; };
 		1698955A29F57591009114D6 /* BookmarkListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarkListView.swift; sourceTree = "<group>"; };
 		1698955C29F5775A009114D6 /* BookmarkListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarkListVC.swift; sourceTree = "<group>"; };
+		16AFDCF82BD7692A00CD2DE6 /* shaikh_hamdullah_mushaf.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = shaikh_hamdullah_mushaf.ttf; sourceTree = "<group>"; };
+		16AFDD012BD771DA00CD2DE6 /* quran.realm */ = {isa = PBXFileReference; lastKnownFileType = file; path = quran.realm; sourceTree = "<group>"; };
+		16AFDD032BD772EB00CD2DE6 /* quranRealm-model.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "quranRealm-model.swift"; sourceTree = "<group>"; };
 		16CF5FBE29E9B31E00B3AD22 /* MainVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainVC.swift; sourceTree = "<group>"; };
 		1FCDE878F64A783CDF2B28D1 /* Pods_QuranSearch.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_QuranSearch.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5F59716AF7113D24C1E56FF2 /* Pods-QuranSearch.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QuranSearch.release.xcconfig"; path = "Target Support Files/Pods-QuranSearch/Pods-QuranSearch.release.xcconfig"; sourceTree = "<group>"; };
@@ -137,6 +141,7 @@
 		1643EFC729E5684A005602D3 = {
 			isa = PBXGroup;
 			children = (
+				16AFDD012BD771DA00CD2DE6 /* quran.realm */,
 				1643EFD229E5684A005602D3 /* QuranSearch */,
 				1643EFD129E5684A005602D3 /* Products */,
 				C18BE6F421112CB1BADA05DF /* Pods */,
@@ -163,6 +168,7 @@
 				1609538229E68DB400F87522 /* SearchPage */,
 				1609538729E68DB400F87522 /* VerseDetail */,
 				1609537C29E68D9F00F87522 /* Model.swift */,
+				16AFDD032BD772EB00CD2DE6 /* quranRealm-model.swift */,
 				1609537B29E68D9F00F87522 /* NestedDecodable.swift */,
 				1609537A29E68D9F00F87522 /* quran_en.json */,
 				1609537D29E68D9F00F87522 /* quran_id.json */,
@@ -183,7 +189,7 @@
 		164FCA6A2B7FB8ED003BDB8E /* fonts */ = {
 			isa = PBXGroup;
 			children = (
-				164FCA6B2B7FB8FC003BDB8E /* Amiri-Regular.ttf */,
+				16AFDCF82BD7692A00CD2DE6 /* shaikh_hamdullah_mushaf.ttf */,
 			);
 			path = fonts;
 			sourceTree = "<group>";
@@ -286,10 +292,11 @@
 				1691DB922A0CA6A60027A106 /* remote_config_defaults.plist in Resources */,
 				1643EFE029E5684B005602D3 /* LaunchScreen.storyboard in Resources */,
 				1609537829E68D8400F87522 /* Localization.strings in Resources */,
+				16AFDD022BD771DA00CD2DE6 /* quran.realm in Resources */,
 				1609538129E68D9F00F87522 /* quran_id.json in Resources */,
+				16AFDCFD2BD7692B00CD2DE6 /* shaikh_hamdullah_mushaf.ttf in Resources */,
 				1609537E29E68D9F00F87522 /* quran_en.json in Resources */,
 				1643EFDD29E5684B005602D3 /* Assets.xcassets in Resources */,
-				164FCA6C2B7FB8FC003BDB8E /* Amiri-Regular.ttf in Resources */,
 				1691DB902A0C9E6F0027A106 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -354,6 +361,7 @@
 				1609537F29E68D9F00F87522 /* NestedDecodable.swift in Sources */,
 				1609538A29E68DB400F87522 /* VerseListView.swift in Sources */,
 				1698955B29F57591009114D6 /* BookmarkListView.swift in Sources */,
+				16AFDD042BD772EB00CD2DE6 /* quranRealm-model.swift in Sources */,
 				1698955D29F5775A009114D6 /* BookmarkListVC.swift in Sources */,
 				1643EFD429E5684A005602D3 /* AppDelegate.swift in Sources */,
 				1643EFD629E5684A005602D3 /* SceneDelegate.swift in Sources */,

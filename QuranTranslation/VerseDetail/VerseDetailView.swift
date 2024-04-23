@@ -46,14 +46,16 @@ internal struct VerseDetailView: View {
         if let chapter = localRealm.objects(Chapter.self).first(where: { chapter in chapter.chapterId == chapterId }),
            let verse = chapter.verses.first(where: { verse in verse.verseId == verseId }),
            let lastChapterId = localRealm.objects(Chapter.self).last?.chapterId,
-           let lastVerseId = chapter.verses.last?.verseId {
+           let lastVerseId = chapter.verses.last?.verseId,
+           let sajdaAyah = quranRealm.objects(QuranAyah.self).first(where: { $0.ayat == verseId && $0.surahId == chapterId })
+        {
             verseDetail = VerseDetail(
                 chapterNumber: chapter.chapterId,
                 chapterName: chapter.translation,
                 chapterArabic: chapter.name,
                 chapterTranslation: chapter.translation,
                 verseNumber: verse.verseId,
-                verseArabic: verse.text,
+                verseArabic: sajdaAyah.arabicText,
                 verseTranslation: verse.translation
             )
             
@@ -72,6 +74,7 @@ internal struct VerseDetailView: View {
             } else {
                 nextTitle = ""
             }
+            bookmarked = getIsBookmarked()
         } else {
             verseDetail = VerseDetail()
         }
@@ -125,7 +128,7 @@ internal struct VerseDetailView: View {
                             .frame(maxWidth: .infinity, alignment: .leading)
                             .padding(EdgeInsets(top: 12, leading: 16, bottom: 0, trailing: 16))
                         Text(verseDetail.verseArabic)
-                            .font(Font.custom("Amiri-Regular", size: 24))
+                            .font(Font.custom("ShaikhHamdullahMushaf", size: 35))
                             .multilineTextAlignment(.trailing)
                             .frame(maxWidth: .infinity, alignment: .trailing)
                             .padding(EdgeInsets(top: 24, leading: 16, bottom: 0, trailing: 16))

@@ -10,6 +10,9 @@ import UIKit
 import RealmSwift
 
 let localRealm = try! Realm(configuration: Realm.Configuration(readOnly: false, schemaVersion: 5, migrationBlock: { migration, oldSchemaVersion in }, deleteRealmIfMigrationNeeded: true))
+let realmURL = Bundle.main.url(forResource: "quran", withExtension: ".realm")
+let configuration = Realm.Configuration(fileURL: realmURL!, readOnly: true, schemaVersion: 107)
+let quranRealm = try! Realm(configuration: configuration)
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
